@@ -549,14 +549,6 @@ if RUN_LIVE_INFERENCE and torch.cuda.is_available():
     print(f"🚀 Đang khởi tạo mô hình LLaDA-MedV trên GPU {torch.cuda.get_device_name(0)} (VRAM: {total_mem:.1f} GB)...")
     print(f"📥 Đang tải và nạp weights từ HuggingFace Hub: {MODEL_PATHS['BASE']}...")
     try:
-        # Tự động vá triệt để tương thích transformers mới
-        import transformers.modeling_utils as _mod_utils
-        import transformers.pytorch_utils as _pt_utils
-        for _target in [_mod_utils, _pt_utils, transformers, sys.modules.get("transformers.modeling_utils"), sys.modules.get("transformers.pytorch_utils")]:
-            if _target is not None:
-                setattr(_target, "find_pruneable_heads_and_indices", _find_pruneable_heads_and_indices)
-                setattr(_target, "prune_linear_layer", _prune_linear_layer)
-                setattr(_target, "apply_chunking_to_forward", _apply_chunking_to_forward)
 
         # Đảm bảo đăng ký lớp LlavaLLaDAModelLM vào namespace của llava.model và builder
         from llava.model.language_model.llava_llada import LlavaLLaDAModelLM, LlavaLLaDAConfig

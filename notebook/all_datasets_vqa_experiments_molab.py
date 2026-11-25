@@ -219,11 +219,9 @@ def _():
         random,
         shutil,
         string,
-        sys,
         time,
         torch,
         total_mem,
-        transformers,
         urllib,
     )
 
@@ -559,7 +557,7 @@ def _(mo):
 
 
 @app.cell
-def _(os, sys, torch, total_mem, transformers):
+def _(os, torch, total_mem):
     # 5. Cấu hình Live GPU Inference trên RTX 6000 Blackwell 96GB
     # Tự động kích hoạt khi phát hiện GPU có VRAM >= 15GB (đặc biệt RTX 6000 Blackwell 96GB)
     RUN_LIVE_INFERENCE = True if torch.cuda.is_available() and total_mem >= 15.0 else False
@@ -574,15 +572,8 @@ def _(os, sys, torch, total_mem, transformers):
         print(f'🚀 Đang khởi tạo mô hình LLaDA-MedV trên GPU {torch.cuda.get_device_name(0)} (VRAM: {total_mem:.1f} GB)...')
         print(f"📥 Đang tải và nạp weights từ HuggingFace Hub: {MODEL_PATHS['BASE']}...")
         try:
-            import transformers.modeling_utils as _mod_utils
-            import transformers.pytorch_utils as _pt_utils
-            for _target in [_mod_utils, _pt_utils, transformers, sys.modules.get('transformers.modeling_utils'), sys.modules.get('transformers.pytorch_utils')]:
-                if _target is not None:
-                    setattr(_target, 'find_pruneable_heads_and_indices', _find_pruneable_heads_and_indices)
-                    setattr(_target, 'prune_linear_layer', _prune_linear_layer)
-                    setattr(_target, 'apply_chunking_to_forward', _apply_chunking_to_forward)
             from llava.model.language_model.llava_llada import LlavaLLaDAModelLM, LlavaLLaDAConfig
-            import llava.model  # Tự động vá triệt để tương thích transformers mới
+            import llava.model
             import llava.model.builder
             setattr(llava.model, 'LlavaLLaDAModelLM', LlavaLLaDAModelLM)
             setattr(llava.model, 'LlavaLLaDAConfig', LlavaLLaDAConfig)
@@ -590,8 +581,8 @@ def _(os, sys, torch, total_mem, transformers):
             setattr(llava.model.builder, 'LlavaLLaDAConfig', LlavaLLaDAConfig)
             from huggingface_hub import snapshot_download
             print(f"📥 Đang tải / kiểm tra weights mô hình từ HuggingFace Hub: {MODEL_PATHS['BASE']} (~16.2 GB)...")
-            model_local_dir = snapshot_download(repo_id=MODEL_PATHS['BASE'], ignore_patterns=['*.git*', '*README.md'])
-            print(f'✅ Trọng số mô hình đã sẵn sàng tại: {model_local_dir}')  # Đảm bảo đăng ký lớp LlavaLLaDAModelLM vào namespace của llava.model và builder
+            model_local_dir = snapshot_download(repo_id=MODEL_PATHS['BASE'], ignore_patterns=['*.git*', '*README.md'])  # Đảm bảo đăng ký lớp LlavaLLaDAModelLM vào namespace của llava.model và builder
+            print(f'✅ Trọng số mô hình đã sẵn sàng tại: {model_local_dir}')
             from llava.constants import DEFAULT_IMAGE_TOKEN, IMAGE_TOKEN_INDEX
             from llava.conversation import conv_templates
             from llava.mm_utils import process_images, tokenizer_image_token, get_model_name_from_path
@@ -599,8 +590,8 @@ def _(os, sys, torch, total_mem, transformers):
             from llava.utils import disable_torch_init
             disable_torch_init()
             model_name = 'llava_llada'
-            live_tokenizer, live_model, live_image_processor, _ = load_pretrained_model(model_path=model_local_dir, model_base=None, model_name=model_name, device_map='auto', torch_dtype='bfloat16', attn_implementation='sdpa', overwrite_config={'mm_vision_tower': 'google/siglip2-so400m-patch14-384'})
-            live_model.eval()  # Tải hoặc kiểm tra weights từ HuggingFace Hub với thanh tiến trình rõ ràng
+            live_tokenizer, live_model, live_image_processor, _ = load_pretrained_model(model_path=model_local_dir, model_base=None, model_name=model_name, device_map='auto', torch_dtype='bfloat16', attn_implementation='sdpa', overwrite_config={'mm_vision_tower': 'google/siglip2-so400m-patch14-384'})  # Tải hoặc kiểm tra weights từ HuggingFace Hub với thanh tiến trình rõ ràng
+            live_model.eval()
             print('✅ Nạp thành công mô hình LLaDA-MedV vào 96GB VRAM!')
         except Exception as e:
             import traceback
