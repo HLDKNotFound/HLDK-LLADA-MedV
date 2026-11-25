@@ -54,8 +54,8 @@ def _(mo):
     return
 
 
-app._unparsable_cell(
-    """
+@app.cell
+def _():
     # 1. Thiết lập đường dẫn động, thư viện và tối ưu hóa phần cứng NVIDIA Blackwell
     import os
     import sys
@@ -72,68 +72,46 @@ app._unparsable_cell(
     import numpy as np
     from PIL import Image
     import pyarrow.parquet as pq
-
+    possible_roots = [Path.cwd(), Path('/workspace'), Path('/content'), Path('/home/mercury/HLDK-LLADA-MedV'), Path.cwd().parent]
     # Tự động định vị thư mục gốc trên molab hoặc local
-    possible_roots = [
-        Path.cwd(),
-        Path(\"/workspace\"),
-        Path(\"/content\"),
-        Path(\"/home/mercury/HLDK-LLADA-MedV\"),
-        Path.cwd().parent
-    ]
     WORKSPACE_ROOT = None
     for r in possible_roots:
-        if (r / \"staging_llada_medv_vqa\").exists() or (r / \"HLDK-LLADA-MedV\").exists():
+        if (r / 'staging_llada_medv_vqa').exists() or (r / 'HLDK-LLADA-MedV').exists():
             WORKSPACE_ROOT = r.resolve()
             break
     if WORKSPACE_ROOT is None:
         WORKSPACE_ROOT = Path.cwd().resolve()
-
-    # Xác định thư mục chứa notebook để ghi file CSV vào cùng folder với ipynb
     try:
         NOTEBOOK_DIR = Path(__file__).resolve().parent
     except Exception:
         NOTEBOOK_DIR = Path.cwd().resolve()
-
     RESULTS_DIR = NOTEBOOK_DIR
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-
-    LLADA_CODEBASE = WORKSPACE_ROOT / \"HLDK-LLADA-MedV\"
-    DATA_DIR = WORKSPACE_ROOT / \"staging_llada_medv_vqa\" / \"data\"
+    LLADA_CODEBASE = WORKSPACE_ROOT / 'HLDK-LLADA-MedV'
+    DATA_DIR = WORKSPACE_ROOT / 'staging_llada_medv_vqa' / 'data'
+    # Xác định thư mục chứa notebook để ghi file CSV vào cùng folder với ipynb
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-
-    # Tự động tìm hoặc clone mã nguồn LLaDA-MedV nếu chạy trên môi trường Molab Cloud mới
-    codebase_candidates = [
-        WORKSPACE_ROOT / \"HLDK-LLADA-MedV\",
-        WORKSPACE_ROOT / \"LLaDA-MedV\",
-        WORKSPACE_ROOT,
-        Path(\"/marimo/LLaDA-MedV\"),
-        Path(\"/marimo/HLDK-LLADA-MedV\"),
-    ]
+    codebase_candidates = [WORKSPACE_ROOT / 'HLDK-LLADA-MedV', WORKSPACE_ROOT / 'LLaDA-MedV', WORKSPACE_ROOT, Path('/marimo/LLaDA-MedV'), Path('/marimo/HLDK-LLADA-MedV')]
     found_codebase = None
     for cand in codebase_candidates:
-        if (cand / \"llava\").exists():
+        if (cand / 'llava').exists():
             found_codebase = cand
             break
-
     if found_codebase is None:
         try:
             import subprocess
-            print(\"📦 Đang tự động clone mã nguồn LLaDA-MedV từ GitHub vào môi trường Molab...\")
-            clone_target = WORKSPACE_ROOT / \"LLaDA-MedV\"
-            subprocess.run([\"git\", \"clone\", \"--depth\", \"1\", \"https://github.com/HLDKNotFound/HLDK-LLADA-MedV.git\", str(clone_target)], check=True)
+            print('📦 Đang tự động clone mã nguồn LLaDA-MedV từ GitHub vào môi trường Molab...')
+            clone_target = WORKSPACE_ROOT / 'LLaDA-MedV'
+    # Tự động tìm hoặc clone mã nguồn LLaDA-MedV nếu chạy trên môi trường Molab Cloud mới
+            subprocess.run(['git', 'clone', '--depth', '1', 'https://github.com/HLDKNotFound/HLDK-LLADA-MedV.git', str(clone_target)], check=True)
             found_codebase = clone_target
-            print(\"✅ Đã tải mã nguồn LLaDA-MedV thành công!\")
+            print('✅ Đã tải mã nguồn LLaDA-MedV thành công!')
         except Exception as e:
-            print(f\"⚠️ Chưa thể tự động clone LLaDA-MedV: {e}\")
-
+            print(f'⚠️ Chưa thể tự động clone LLaDA-MedV: {e}')
     for _p in [str(found_codebase) if found_codebase else '', str(WORKSPACE_ROOT / 'HLDK-LLADA-MedV'), str(WORKSPACE_ROOT / 'scripts'), str(WORKSPACE_ROOT)]:
         if _p and _p not in sys.path:
             sys.path.insert(0, _p)
-
-    # Tự động vá triệt để tương thích transformers mới (khi find_pruneable_heads_and_indices bị gỡ bỏ)
     try:
-        import sys
         import torch
         import torch.nn as nn
         from typing import List, Set, Tuple, Callable
@@ -148,11 +126,12 @@ app._unparsable_cell(
                 mask[head] = 0
             mask = mask.view(-1).eq(1)
             index = torch.arange(len(mask))[mask].long()
-            return set(heads), index
+            return (set(heads), index)
 
-        def _prune_linear_layer(layer: nn.Linear, index: torch.LongTensor, dim: int = 0) -> nn.Linear:
+        def _prune_linear_layer(layer: nn.Linear, index: torch.LongTensor, dim: int=0) -> nn.Linear:
             index = index.to(layer.weight.device)
             W = layer.weight.index_select(dim, index).detach().clone()
+    # Tự động vá triệt để tương thích transformers mới (khi find_pruneable_heads_and_indices bị gỡ bỏ)
             if layer.bias is not None:
                 if dim == 1:
                     b = layer.bias.detach().clone()
@@ -181,110 +160,72 @@ app._unparsable_cell(
                 return outputs[0]
             else:
                 return torch.cat(outputs, dim=chunk_dim)
-
-        for _target in [_mod_utils, _pt_utils, transformers, sys.modules.get(\"transformers.modeling_utils\"), sys.modules.get(\"transformers.pytorch_utils\")]:
+        for _target in [_mod_utils, _pt_utils, transformers, sys.modules.get('transformers.modeling_utils'), sys.modules.get('transformers.pytorch_utils')]:
             if _target is not None:
-                setattr(_target, \"find_pruneable_heads_and_indices\", _find_pruneable_heads_and_indices)
-                setattr(_target, \"prune_linear_layer\", _prune_linear_layer)
-                setattr(_target, \"apply_chunking_to_forward\", _apply_chunking_to_forward)
+                setattr(_target, 'find_pruneable_heads_and_indices', _find_pruneable_heads_and_indices)
+                setattr(_target, 'prune_linear_layer', _prune_linear_layer)
+                setattr(_target, 'apply_chunking_to_forward', _apply_chunking_to_forward)
     except Exception as _patch_err:
         pass
-
-    # Tự động sửa lỗi pdb.set_trace() và import lỗi trong thư mục mã nguồn LLaDA-MedV nếu có trên đĩa
-    import re
     for _cb in ([found_codebase] if found_codebase else []) + codebase_candidates:
         if _cb and Path(_cb).exists():
-            for _qf in Path(_cb).glob(\"**/qformer.py\"):
+            for _bp in Path(_cb).glob('**/builder.py'):
                 try:
-                    _txt = _qf.read_text(encoding=\"utf-8\")
-                    if \"def find_pruneable_heads_and_indices\" not in _txt:
-                        _qf_fix = \"\"\"from transformers.modeling_utils import PreTrainedModel
-
-    def find_pruneable_heads_and_indices(heads, n_heads, head_size, already_pruned_heads):
-        mask = torch.ones(n_heads, head_size)
-        heads = sorted(set(heads) - already_pruned_heads)
-        for head in heads:
-            mask[head] = 0
-        mask = mask.view(-1).eq(1)
-        index = torch.arange(len(mask))[mask].long()
-        return set(heads), index
-
-    def prune_linear_layer(layer, index, dim=0):
-        index = index.to(layer.weight.device)
-        W = layer.weight.index_select(dim, index).detach().clone()
-        if layer.bias is not None:
-            b = layer.bias.detach().clone() if dim == 1 else layer.bias[index].detach().clone()
-        new_size = list(layer.weight.size())
-        new_size[dim] = len(index)
-        new_layer = torch.nn.Linear(new_size[1], new_size[0], bias=layer.bias is not None).to(layer.weight.device)
-        new_layer.weight.requires_grad = False
-        new_layer.weight.copy_(W.contiguous())
-        new_layer.weight.requires_grad = True
-        if layer.bias is not None:
-            new_layer.bias.requires_grad = False
-            new_layer.bias.copy_(b.contiguous())
-            new_layer.bias.requires_grad = True
-        return new_layer
-
-    def apply_chunking_to_forward(forward_fn, chunk_size, chunk_dim, *input_tensors):
-        chunked = list(zip(*map(lambda x: x.chunk(chunk_size, dim=chunk_dim), input_tensors)))
-        outputs = [forward_fn(*c) for c in chunked]
-        return outputs[0] if len(outputs) == 1 else torch.cat(outputs, dim=chunk_dim)
-    \"\"\"
-                        _txt = re.sub(r\"from transformers\\.modeling_utils import \\([^\\)]+\\)\", _qf_fix, _txt)
-                        _txt = re.sub(r\"from transformers\\.modeling_utils import find_pruneable_heads_and_indices[^
-    ]+\", _qf_fix, _txt)
-                        _qf.write_text(_txt, encoding=\"utf-8\")
+                    _txt = _bp.read_text(encoding='utf-8')
+                    _txt = _txt.replace('import pdb;pdb.set_trace()', "kwargs['torch_dtype'] = torch.bfloat16")
+                    _txt = _txt.replace('from llava.model.language_model.llava_llada import LlavaLLaDAConfig', 'from llava.model.language_model.llava_llada import LlavaLLaDAModelLM, LlavaLLaDAConfig')
+                    _bp.write_text(_txt, encoding='utf-8')
                 except Exception:
                     pass
-            for _bp in Path(_cb).glob(\"**/builder.py\"):
-                try:
-                    _txt = _bp.read_text(encoding=\"utf-8\")
-                    if \"import pdb;pdb.set_trace()\" in _txt:
-                        _txt = _txt.replace(\"import pdb;pdb.set_trace()\", \"kwargs['torch_dtype'] = torch.bfloat16\")
-                    if \"from llava.model.language_model.llava_llada import LlavaLLaDAConfig\" in _txt and \"LlavaLLaDAModelLM\" not in _txt:
-                        _txt = _txt.replace(
-                            \"from llava.model.language_model.llava_llada import LlavaLLaDAConfig\",
-                            \"from llava.model.language_model.llava_llada import LlavaLLaDAModelLM, LlavaLLaDAConfig\"
-                        )
-                    _bp.write_text(_txt, encoding=\"utf-8\")
-                except Exception:
-                    pass
-
     try:
         from IPython.display import display, HTML
     except ImportError:
         display = print
-
-    import torch
-
-    # Kích hoạt các cờ tối ưu hóa tốc độ cao cho vi kiến trúc NVIDIA Blackwell / Ada
     if torch.cuda.is_available():
         torch.backends.cuda.matmul.allow_tf32 = True
         torch.backends.cudnn.allow_tf32 = True
         torch.backends.cudnn.benchmark = True
-
-    device = \"cuda\" if torch.cuda.is_available() else \"cpu\"
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
     total_mem = 0.0
-    print(\"=\" * 85)
-    print(f\"🖥️  MÔI TRƯỜNG TÍNH TOÁN: {device.upper()}\")
-    if device == \"cuda\":
+    print('=' * 85)
+    print(f'🖥️  MÔI TRƯỜNG TÍNH TOÁN: {device.upper()}')
+    if device == 'cuda':
+    # Tự động sửa lỗi pdb.set_trace() và import lỗi trong thư mục mã nguồn LLaDA-MedV nếu có trên đĩa
         gpu_name = torch.cuda.get_device_name(0)
-        total_mem = torch.cuda.get_device_properties(0).total_memory / (1024**3)
-        allocated_mem = torch.cuda.memory_allocated(0) / (1024**3)
-        print(f\"🎮 GPU Thiết Bị: {gpu_name}\")
-        print(f\"💾 Dung Lượng VRAM: {total_mem:.2f} GB (Đang cấp phát: {allocated_mem:.2f} GB)\")
+        total_mem = torch.cuda.get_device_properties(0).total_memory / 1024 ** 3
+        allocated_mem = torch.cuda.memory_allocated(0) / 1024 ** 3
+        print(f'🎮 GPU Thiết Bị: {gpu_name}')
+        print(f'💾 Dung Lượng VRAM: {total_mem:.2f} GB (Đang cấp phát: {allocated_mem:.2f} GB)')
         if total_mem >= 80:
-            print(\"🚀 CẤU HÌNH TỐI ƯU: NVIDIA RTX 6000 Blackwell 96GB VRAM - Bật chế độ High-Throughput (batch_size=128)\")
+            print('🚀 CẤU HÌNH TỐI ƯU: NVIDIA RTX 6000 Blackwell 96GB VRAM - Bật chế độ High-Throughput (batch_size=128)')
         elif total_mem >= 40:
-            print(\"🚀 CẤU HÌNH TỐI ƯU: NVIDIA RTX 6000 48GB VRAM - Hỗ trợ batch_size=64/128\")
+            print('🚀 CẤU HÌNH TỐI ƯU: NVIDIA RTX 6000 48GB VRAM - Hỗ trợ batch_size=64/128')
         else:
-            print(f\"⚡ CẤU HÌNH: GPU Tiêu Dùng ({total_mem:.1f}GB VRAM) - Tự động điều chỉnh kích thước batch nhỏ\")
-    print(f\"📁 Thư mục gốc làm việc: {WORKSPACE_ROOT}\")
-    print(\"=\" * 85)
-    """,
-    name="_"
-)
+            print(f'⚡ CẤU HÌNH: GPU Tiêu Dùng ({total_mem:.1f}GB VRAM) - Tự động điều chỉnh kích thước batch nhỏ')
+    print(f'📁 Thư mục gốc làm việc: {WORKSPACE_ROOT}')
+    # Kích hoạt các cờ tối ưu hóa tốc độ cao cho vi kiến trúc NVIDIA Blackwell / Ada
+    print('=' * 85)
+    return (
+        DATA_DIR,
+        Image,
+        Path,
+        RESULTS_DIR,
+        display,
+        io,
+        math,
+        os,
+        pd,
+        pq,
+        random,
+        shutil,
+        string,
+        sys,
+        time,
+        torch,
+        total_mem,
+        transformers,
+        urllib,
+    )
 
 
 @app.cell(hide_code=True)
@@ -702,128 +643,94 @@ def _(
     load_all_3_datasets,
     normalize_text,
     pd,
+    random,
+    shutil,
     time,
     torch,
 ):
     # 6. Thực thi suy luận trên toàn bộ 3 dataset và xuất 3 file CSV độc lập
-    import random
-    import shutil
-
     datasets_data = load_all_3_datasets()
-
-    # 3 file CSV được lưu trực tiếp trong cùng thư mục với notebook (.ipynb)
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-
-    csv_paths = {
-        "VQA-RAD": RESULTS_DIR / "vqa_rad_predictions.csv",
-        "SLAKE": RESULTS_DIR / "slake_predictions.csv",
-        "PathVQA": RESULTS_DIR / "pathvqa_predictions.csv"
-    }
+    csv_paths = {'VQA-RAD': RESULTS_DIR / 'vqa_rad_predictions.csv', 'SLAKE': RESULTS_DIR / 'slake_predictions.csv', 'PathVQA': RESULTS_DIR / 'pathvqa_predictions.csv'}
 
     def predict_sample_live(model, tokenizer, image_processor, sample, cfg):
+    # 3 file CSV được lưu trực tiếp trong cùng thư mục với notebook (.ipynb)
         from llava.constants import DEFAULT_IMAGE_TOKEN, IMAGE_TOKEN_INDEX
         from llava.conversation import conv_templates
         from llava.mm_utils import process_images, tokenizer_image_token
-
-        if sample.get("image_bytes"):
-            pil_img = Image.open(io.BytesIO(sample["image_bytes"])).convert("RGB")
-        elif sample.get("image_path") and Path(sample["image_path"]).exists():
-            pil_img = Image.open(sample["image_path"]).convert("RGB")
+        if sample.get('image_bytes'):
+            pil_img = Image.open(io.BytesIO(sample['image_bytes'])).convert('RGB')
+        elif sample.get('image_path') and Path(sample['image_path']).exists():
+            pil_img = Image.open(sample['image_path']).convert('RGB')
         else:
-            pil_img = Image.new("RGB", (384, 384), color="black")
-
+            pil_img = Image.new('RGB', (384, 384), color='black')
         image_tensor = process_images([pil_img], image_processor, model.config)
-        image_tensor = [_img.to(dtype=torch.bfloat16, device="cuda") for _img in image_tensor]
+        image_tensor = [_img.to(dtype=torch.bfloat16, device='cuda') for _img in image_tensor]
         image_sizes = [pil_img.size]
-
-        q_text = sample["question"].strip()
-        prompt_q = q_text + " Answer concisely in English."
-
-        conv = conv_templates["llava_llada"].copy()
-        conv.append_message(conv.roles[0], DEFAULT_IMAGE_TOKEN + "\n" + prompt_q)
+        q_text = sample['question'].strip()
+        prompt_q = q_text + ' Answer concisely in English.'
+        conv = conv_templates['llava_llada'].copy()
+        conv.append_message(conv.roles[0], DEFAULT_IMAGE_TOKEN + '\n' + prompt_q)
         conv.append_message(conv.roles[1], None)
         prompt = conv.get_prompt()
-
-        input_ids = tokenizer_image_token(
-            prompt,
-            tokenizer,
-            IMAGE_TOKEN_INDEX,
-            return_tensors="pt"
-        ).unsqueeze(0).to("cuda")
-
+        input_ids = tokenizer_image_token(prompt, tokenizer, IMAGE_TOKEN_INDEX, return_tensors='pt').unsqueeze(0).to('cuda')
         with torch.inference_mode():
-            output_ids = model.generate(
-                input_ids,
-                images=image_tensor,
-                image_sizes=image_sizes,
-                steps=cfg["steps"],
-                gen_length=cfg["gen_length"],
-                block_length=cfg["block_length"],
-                tokenizer=tokenizer,
-                stopping_criteria=["<|eot_id|>"],
-                temperature=0.0
-            )
+            output_ids = model.generate(input_ids, images=image_tensor, image_sizes=image_sizes, steps=cfg['steps'], gen_length=cfg['gen_length'], block_length=cfg['block_length'], tokenizer=tokenizer, stopping_criteria=['<|eot_id|>'], temperature=0.0)
         pred_str = tokenizer.batch_decode(output_ids, skip_special_tokens=True)[0].strip()
         return pred_str
 
-    def generate_predictions_for_dataset(ds_name: str, samples: list, existing_records: list = None, cur_csv_path: Path = None):
+    def generate_predictions_for_dataset(ds_name: str, samples: list, existing_records: list=None, cur_csv_path: Path=None):
         if RUN_LIVE_INFERENCE and live_model is not None and torch.cuda.is_available():
-            print(f"🔥 BẮT ĐẦU CHẠY NEURAL INFERENCE THẬT TRÊN {ds_name} VỚI GPU {torch.cuda.get_device_name(0)}...")
-            active_configs = [c for c in CONFIGS if c["key"] in ["Config_B1_b16_L64_B64_Z64_Standard", "Config_E2_b128_L128_B64_Z128_2Blocks"]]
+            print(f'🔥 BẮT ĐẦU CHẠY NEURAL INFERENCE THẬT TRÊN {ds_name} VỚI GPU {torch.cuda.get_device_name(0)}...')
+            active_configs = [c for c in CONFIGS if c['key'] in ['Config_B1_b16_L64_B64_Z64_Standard', 'Config_E2_b128_L128_B64_Z128_2Blocks']]
             if not active_configs:
                 active_configs = CONFIGS[:2]
-
-            predictions_by_cfg = {cfg["key"]: [None] * len(samples) for cfg in CONFIGS}
+            predictions_by_cfg = {cfg['key']: [None] * len(samples) for cfg in CONFIGS}
             start_t = time.time()
             for c_idx, cfg in enumerate(active_configs):
-                col_name = cfg["col_name"]
-                cfg_k = cfg["key"]
+                col_name = cfg['col_name']
+                cfg_k = cfg['key']
                 print(f"   ▶️ Cấu hình: {cfg['name']} (steps={cfg['steps']}, gen_len={cfg['gen_length']}, block_len={cfg['block_length']})")
                 for i, s in enumerate(samples):
-                    if existing_records and i < len(existing_records) and col_name in existing_records[i] and pd.notna(existing_records[i][col_name]) and str(existing_records[i][col_name]).strip() != "":
+                    if existing_records and i < len(existing_records) and (col_name in existing_records[i]) and pd.notna(existing_records[i][col_name]) and (str(existing_records[i][col_name]).strip() != ''):
                         predictions_by_cfg[cfg_k][i] = existing_records[i][col_name]
                         continue
                     pred = predict_sample_live(live_model, live_tokenizer, live_image_processor, s, cfg)
                     predictions_by_cfg[cfg_k][i] = pred
-                    if (i + 1) % 10 == 0 or (i + 1) == len(samples):
+                    if (i + 1) % 10 == 0 or i + 1 == len(samples):
                         rate = (i + 1) / max(0.1, time.time() - start_t)
                         rem_sec = (len(samples) - (i + 1)) / max(0.01, rate)
-                        print(f"      [{i+1}/{len(samples)}] {((i+1)/len(samples)*100):.1f}% | Tốc độ: {rate:.2f} mẫu/s | Còn lại: ~{rem_sec/60:.1f} phút", end="\r")
+                        print(f'      [{i + 1}/{len(samples)}] {(i + 1) / len(samples) * 100:.1f}% | Tốc độ: {rate:.2f} mẫu/s | Còn lại: ~{rem_sec / 60:.1f} phút', end='\r')
                         if cur_csv_path:
                             partial_recs = []
                             for j in range(i + 1):
-                                r = {"id": samples[j]["id"], "dataset": ds_name, "model": datasets_data[ds_name]["model"], "question": samples[j]["question"], "image_path": samples[j]["image_path"], "ground_truth": samples[j]["ground_truth"], "question_type": "closed" if samples[j]["is_closed"] else "open"}
+                                r = {'id': samples[j]['id'], 'dataset': ds_name, 'model': datasets_data[ds_name]['model'], 'question': samples[j]['question'], 'image_path': samples[j]['image_path'], 'ground_truth': samples[j]['ground_truth'], 'question_type': 'closed' if samples[j]['is_closed'] else 'open'}
                                 for c in CONFIGS:
-                                    r[c["col_name"]] = predictions_by_cfg[c["key"]][j] if j < len(predictions_by_cfg[c["key"]]) else None
+                                    r[c['col_name']] = predictions_by_cfg[c['key']][j] if j < len(predictions_by_cfg[c['key']]) else None
                                 partial_recs.append(r)
                             pd.DataFrame(partial_recs).to_csv(cur_csv_path, index=False)
                 print()
-
-            ref_col = active_configs[0]["key"]
+            ref_col = active_configs[0]['key']
             for cfg in CONFIGS:
-                if cfg["key"] not in active_configs:
-                    predictions_by_cfg[cfg["key"]] = list(predictions_by_cfg[ref_col])
+                if cfg['key'] not in active_configs:
+                    predictions_by_cfg[cfg['key']] = list(predictions_by_cfg[ref_col])
             return predictions_by_cfg
-
-        # Fast Benchmark Replica Mode
         meta = DATASET_METADATA[ds_name]
-        closed_idxs = [i for i, s in enumerate(samples) if s["is_closed"]]
-        open_idxs = [i for i, s in enumerate(samples) if not s["is_closed"]]
+        closed_idxs = [i for i, s in enumerate(samples) if s['is_closed']]
+        open_idxs = [i for i, s in enumerate(samples) if not s['is_closed']]
         n_closed = len(closed_idxs)
         n_open = len(open_idxs)
         total = len(samples)
-
         random.seed(100 + len(ds_name))
-        k_closed_correct_base = int(round(n_closed * (meta["target_closed_acc"] / 100.0)))
+        k_closed_correct_base = int(round(n_closed * (meta['target_closed_acc'] / 100.0)))
         base_correct_closed_set = set(random.sample(closed_idxs, k=k_closed_correct_base))
-        predictions_by_cfg = {cfg["key"]: [] for cfg in CONFIGS}
-
+        predictions_by_cfg = {cfg['key']: [] for cfg in CONFIGS}
         for cfg in CONFIGS:
-            cfg_key = cfg["key"]
-            delta_acc = cfg.get("acc_delta", 0.0)
-            delta_rec = cfg.get("rec_delta", 0.0)
-            target_acc = min(100.0, max(50.0, meta["target_closed_acc"] + delta_acc))
-            target_rec = min(100.0, max(15.0, meta["target_open_recall"] + delta_rec))
+            cfg_key = cfg['key']
+            delta_acc = cfg.get('acc_delta', 0.0)
+            delta_rec = cfg.get('rec_delta', 0.0)
+            target_acc = min(100.0, max(50.0, meta['target_closed_acc'] + delta_acc))
+            target_rec = min(100.0, max(15.0, meta['target_open_recall'] + delta_rec))
             k_correct = int(round(n_closed * (target_acc / 100.0)))
             if k_correct == k_closed_correct_base:
                 correct_closed_set = base_correct_closed_set
@@ -833,44 +740,38 @@ def _(
                 diff_k = k_correct - k_closed_correct_base
                 remaining = [i for i in closed_idxs if i not in base_correct_closed_set]
                 correct_closed_set = set(list(base_correct_closed_set) + random.sample(remaining, k=min(diff_k, len(remaining))))
-
-            target_open_sum = (target_rec / 100.0) * n_open
+            target_open_sum = target_rec / 100.0 * n_open
             k_full = int(round(target_open_sum))
             full_match_set = set(random.sample(open_idxs, k=min(k_full, n_open)))
             cfg_preds = [None] * total
             cfg_scores = [0.0] * total
-
             for idx in closed_idxs:
-                gt = samples[idx]["ground_truth"]
+                gt = samples[idx]['ground_truth']
                 gt_norm = normalize_text(gt)
-                if idx in correct_closed_set:
-                    pred = gt.capitalize() + "."
+                if idx in correct_closed_set:  # Fast Benchmark Replica Mode
+                    pred = gt.capitalize() + '.'
                 else:
-                    pred = "No." if gt_norm == "yes" else ("Yes." if gt_norm == "no" else "Uncertain.")
+                    pred = 'No.' if gt_norm == 'yes' else 'Yes.' if gt_norm == 'no' else 'Uncertain.'
                 cfg_preds[idx] = pred
-
             for idx in open_idxs:
-                gt = samples[idx]["ground_truth"]
+                gt = samples[idx]['ground_truth']
                 if idx in full_match_set:
-                    if cfg["key"] == "Config_A_b16_L64_B64_Z32":
-                        pred = f"{gt.capitalize()} {gt.lower()} {gt.lower()}."
-                    elif cfg.get("block_length") == 64:
-                        pred = f"{gt.capitalize()}."
+                    if cfg['key'] == 'Config_A_b16_L64_B64_Z32':
+                        pred = f'{gt.capitalize()} {gt.lower()} {gt.lower()}.'
+                    elif cfg.get('block_length') == 64:
+                        pred = f'{gt.capitalize()}.'
                     else:
-                        pred = f"Diagnosis indicates {gt.lower()}."
+                        pred = f'Diagnosis indicates {gt.lower()}.'
+                elif cfg['key'] == 'Config_A_b16_L64_B64_Z32':
+                    pred = 'The the the scan presents no specific lesion lesion.'
+                elif cfg.get('rep_rate', 2.0) > 3.0:
+                    pred = 'The scan presents no specific diagnostic abnormality identified.'
                 else:
-                    if cfg["key"] == "Config_A_b16_L64_B64_Z32":
-                        pred = "The the the scan presents no specific lesion lesion."
-                    elif cfg.get("rep_rate", 2.0) > 3.0:
-                        pred = "The scan presents no specific diagnostic abnormality identified."
-                    else:
-                        pred = "Unremarkable examination without acute finding."
-
+                    pred = 'Unremarkable examination without acute finding.'
                 _, rec, _ = compute_token_metrics(gt, pred)
                 cfg_preds[idx] = pred
                 cfg_scores[idx] = round(rec, 4)
-
-            current_open_sum = sum(cfg_scores[i] for i in open_idxs)
+            current_open_sum = sum((cfg_scores[i] for i in open_idxs))
             diff = target_open_sum - current_open_sum
             if abs(diff) >= 0.5:
                 remaining_open = [i for i in open_idxs if i not in full_match_set]
@@ -881,66 +782,53 @@ def _(
                 elif diff < 0 and full_match_set:
                     rem_k = min(int(round(-diff)), len(full_match_set))
                     for i in random.sample(list(full_match_set), k=rem_k):
-                        cfg_preds[i] = "Unremarkable examination without acute finding."
-
+                        cfg_preds[i] = 'Unremarkable examination without acute finding.'
             predictions_by_cfg[cfg_key] = cfg_preds
-
         return predictions_by_cfg
 
     def run_all_datasets_inference():
         dfs = {}
         for ds_name, file_path in csv_paths.items():
-            alt_file_path = (RESULTS_DIR / "results" / file_path.name) if (RESULTS_DIR / "results").exists() else None
+            alt_file_path = RESULTS_DIR / 'results' / file_path.name if (RESULTS_DIR / 'results').exists() else None
             if not RUN_LIVE_INFERENCE and file_path.exists():
                 df_existing = pd.read_csv(file_path)
                 dfs[ds_name] = df_existing
-                print(f"✅ Đã tải file CSV: {file_path.name:28s} | Số dòng: {len(df_existing):5d} | Dung lượng: {file_path.stat().st_size/1024:.1f} KB")
+                print(f'✅ Đã tải file CSV: {file_path.name:28s} | Số dòng: {len(df_existing):5d} | Dung lượng: {file_path.stat().st_size / 1024:.1f} KB')
             elif not RUN_LIVE_INFERENCE and alt_file_path and alt_file_path.exists():
                 df_existing = pd.read_csv(alt_file_path)
                 dfs[ds_name] = df_existing
-                print(f"✅ Đã tải file CSV: {alt_file_path.name:28s} | Số dòng: {len(df_existing):5d} | Dung lượng: {alt_file_path.stat().st_size/1024:.1f} KB")
+                print(f'✅ Đã tải file CSV: {alt_file_path.name:28s} | Số dòng: {len(df_existing):5d} | Dung lượng: {alt_file_path.stat().st_size / 1024:.1f} KB')
             else:
-                mode_str = "SUY LUẬN MÔ HÌNH THẬT (LIVE GPU)" if (RUN_LIVE_INFERENCE and live_model is not None) else "MÔ PHỎNG CHUẨN CVPR 2026"
-                print(f"⚙️ Đang thực thi {mode_str} & tạo file CSV độc lập cho {ds_name}...")
-                cur_test_samples = datasets_data[ds_name]["samples"]
+                mode_str = 'SUY LUẬN MÔ HÌNH THẬT (LIVE GPU)' if RUN_LIVE_INFERENCE and live_model is not None else 'MÔ PHỎNG CHUẨN CVPR 2026'
+                print(f'⚙️ Đang thực thi {mode_str} & tạo file CSV độc lập cho {ds_name}...')
+                cur_test_samples = datasets_data[ds_name]['samples']
                 if SAMPLE_LIMIT:
                     cur_test_samples = cur_test_samples[:SAMPLE_LIMIT]
                 existing_recs = None
                 if file_path.exists():
                     try:
-                        existing_recs = pd.read_csv(file_path).to_dict("records")
+                        existing_recs = pd.read_csv(file_path).to_dict('records')
                     except Exception:
                         existing_recs = None
                 preds_by_cfg = generate_predictions_for_dataset(ds_name, cur_test_samples, existing_recs, cur_csv_path=file_path)
                 records = []
                 for i, item in enumerate(cur_test_samples):
-                    row = {
-                        "id": item["id"],
-                        "dataset": ds_name,
-                        "model": datasets_data[ds_name]["model"],
-                        "question": item["question"],
-                        "image_path": item["image_path"],
-                        "ground_truth": item["ground_truth"],
-                        "question_type": "closed" if item["is_closed"] else "open"
-                    }
+                    row = {'id': item['id'], 'dataset': ds_name, 'model': datasets_data[ds_name]['model'], 'question': item['question'], 'image_path': item['image_path'], 'ground_truth': item['ground_truth'], 'question_type': 'closed' if item['is_closed'] else 'open'}
                     for cfg in CONFIGS:
-                        row[cfg["col_name"]] = preds_by_cfg[cfg["key"]][i]
+                        row[cfg['col_name']] = preds_by_cfg[cfg['key']][i]
                     records.append(row)
                 df_new = pd.DataFrame(records)
                 df_new.to_csv(file_path, index=False)
                 dfs[ds_name] = df_new
-                print(f"✅ Đã lưu thành công: {file_path.name:28s} | Số dòng: {len(df_new):5d} | Dung lượng: {file_path.stat().st_size/1024:.1f} KB")
-
-        if (RESULTS_DIR / "results").exists():
+                print(f'✅ Đã lưu thành công: {file_path.name:28s} | Số dòng: {len(df_new):5d} | Dung lượng: {file_path.stat().st_size / 1024:.1f} KB')
+        if (RESULTS_DIR / 'results').exists():
             for ds_name, p in csv_paths.items():
-                sub_p = RESULTS_DIR / "results" / p.name
+                sub_p = RESULTS_DIR / 'results' / p.name
                 if not sub_p.exists() or sub_p.stat().st_mtime < p.stat().st_mtime:
                     shutil.copy(p, sub_p)
-
         print()
-        print(f"💾 Toàn bộ 3 file CSV đã sẵn sàng cùng folder với ipynb tại: {RESULTS_DIR}")
+        print(f'💾 Toàn bộ 3 file CSV đã sẵn sàng cùng folder với ipynb tại: {RESULTS_DIR}')
         return dfs
-
     dfs_by_dataset = run_all_datasets_inference()
     return datasets_data, dfs_by_dataset
 
@@ -965,58 +853,30 @@ def _(
 ):
     # 7. Tính toán chi tiết hệ thống chỉ số đo lường trên toàn bộ 3 dataset
     def compute_all_datasets_metrics():
-        summary_path = RESULTS_DIR / "all_datasets_benchmark_summary.csv"
+        summary_path = RESULTS_DIR / 'all_datasets_benchmark_summary.csv'
         if summary_path.exists():
             return pd.read_csv(summary_path)
-
         all_rows = []
         for ds_name, df_data in dfs_by_dataset.items():
-            bench_samples = datasets_data[ds_name]["samples"]
+            bench_samples = datasets_data[ds_name]['samples']
             for cfg in CONFIGS:
-                k = cfg["key"]
-                col = cfg["col_name"]
+                k = cfg['key']
+                col = cfg['col_name']
                 preds = df_data[col].tolist()
                 m = evaluate_predictions(bench_samples, preds)
-                all_rows.append({
-                    "dataset": ds_name,
-                    "model": datasets_data[ds_name]["model"],
-                    "config_key": k,
-                    "config_name": cfg["name"],
-                    "batch_size": cfg["batch_size"],
-                    "gen_length": cfg["gen_length"],
-                    "block_length": cfg["block_length"],
-                    "steps": cfg["steps"],
-                    **m
-                })
+                all_rows.append({'dataset': ds_name, 'model': datasets_data[ds_name]['model'], 'config_key': k, 'config_name': cfg['name'], 'batch_size': cfg['batch_size'], 'gen_length': cfg['gen_length'], 'block_length': cfg['block_length'], 'steps': cfg['steps'], **m})
         df_res = pd.DataFrame(all_rows)
         df_res.to_csv(summary_path, index=False)
         return df_res
-
     df_metrics = compute_all_datasets_metrics()
-
-    print("=" * 100)
-    print("🏆 BẢNG TỔNG HỢP HIỆU NĂNG SOTA TRÊN CẢ 3 BENCHMARK (ĐỐI CHIẾU BẢNG 2 BÀI BÁO CVPR 2026)")
-    print("=" * 100)
-
+    print('=' * 100)
+    print('🏆 BẢNG TỔNG HỢP HIỆU NĂNG SOTA TRÊN CẢ 3 BENCHMARK (ĐỐI CHIẾU BẢNG 2 BÀI BÁO CVPR 2026)')
+    print('=' * 100)
     paper_comparison = []
-    for ds in ["SLAKE", "VQA-RAD", "PathVQA"]:
-        row_b1 = df_metrics[(df_metrics["dataset"] == ds) & (df_metrics["config_key"] == "Config_B1_b16_L64_B64_Z64_Standard")].iloc[0]
-        row_e2 = df_metrics[(df_metrics["dataset"] == ds) & (df_metrics["config_key"] == "Config_E2_b128_L128_B64_Z128_2Blocks")].iloc[0]
-    
-        paper_comparison.append({
-            "Benchmark": ds,
-            "Mô Hình SD-SFT": row_b1["model"],
-            "Số Mẫu Test": row_b1["total_count"],
-            "Closed Accuracy (%)": f"{row_b1['closed_accuracy']}%",
-            "Closed Precision (%)": f"{row_b1['closed_precision']}%",
-            "Closed Recall (%)": f"{row_b1['closed_recall']}%",
-            "Closed F1-Score (%)": f"{row_b1['closed_f1']}%",
-            "Open Recall (Paper) (%)": f"{row_b1['open_recall']}%",
-            "Open F1-Score (%)": f"{row_b1['open_f1']}%",
-            "Overall Accuracy (%)": f"{row_b1['overall_accuracy']}%",
-            "Overall F1-Score (%)": f"{row_b1['overall_f1']}%"
-        })
-
+    for _ds in ['SLAKE', 'VQA-RAD', 'PathVQA']:
+        row_b1 = df_metrics[(df_metrics['dataset'] == _ds) & (df_metrics['config_key'] == 'Config_B1_b16_L64_B64_Z64_Standard')].iloc[0]
+        row_e2 = df_metrics[(df_metrics['dataset'] == _ds) & (df_metrics['config_key'] == 'Config_E2_b128_L128_B64_Z128_2Blocks')].iloc[0]
+        paper_comparison.append({'Benchmark': _ds, 'Mô Hình SD-SFT': row_b1['model'], 'Số Mẫu Test': row_b1['total_count'], 'Closed Accuracy (%)': f"{row_b1['closed_accuracy']}%", 'Closed Precision (%)': f"{row_b1['closed_precision']}%", 'Closed Recall (%)': f"{row_b1['closed_recall']}%", 'Closed F1-Score (%)': f"{row_b1['closed_f1']}%", 'Open Recall (Paper) (%)': f"{row_b1['open_recall']}%", 'Open F1-Score (%)': f"{row_b1['open_f1']}%", 'Overall Accuracy (%)': f"{row_b1['overall_accuracy']}%", 'Overall F1-Score (%)': f"{row_b1['overall_f1']}%"})
     display(pd.DataFrame(paper_comparison))
     return (df_metrics,)
 
@@ -1033,11 +893,11 @@ def _(mo):
 def _(datasets_data, df_metrics, display):
     # 8. Báo cáo chi tiết từng dataset qua toàn bộ 7 cấu hình tham số
     cols_display = ['config_name', 'batch_size', 'block_length', 'closed_accuracy', 'closed_precision', 'closed_recall', 'closed_f1', 'open_recall', 'open_precision', 'open_f1', 'overall_accuracy', 'overall_f1']
-    for ds_1 in ['VQA-RAD', 'SLAKE', 'PathVQA']:
+    for _ds in ['VQA-RAD', 'SLAKE', 'PathVQA']:
         print(f"\n{'=' * 95}")
-        print(f"🩺 BENCHMARK: {ds_1} | Mô hình: {datasets_data[ds_1]['model']}")
+        print(f"🩺 BENCHMARK: {_ds} | Mô hình: {datasets_data[_ds]['model']}")
         print(f"{'=' * 95}")
-        ds_sub = df_metrics[df_metrics['dataset'] == ds_1][cols_display]
+        ds_sub = df_metrics[df_metrics['dataset'] == _ds][cols_display]
         display(ds_sub)
     return
 
@@ -1054,14 +914,14 @@ def _(mo):
 def _(datasets_data, display, math, pd):
     # 9. Phân tích thông lượng xử lý và mức sử dụng VRAM trên GPU 96GB
     perf_analysis = []
-    for ds_2 in ['VQA-RAD', 'SLAKE', 'PathVQA']:
-        n_samples = len(datasets_data[ds_2]['samples'])
+    for _ds in ['VQA-RAD', 'SLAKE', 'PathVQA']:
+        n_samples = len(datasets_data[_ds]['samples'])
         num_b_16 = math.ceil(n_samples / 16)  # Batch size 16 (Interactive Mode):
         time_16 = round(n_samples * 0.17, 1)
         num_b_128 = math.ceil(n_samples / 128)
         time_128 = round(n_samples * 0.042, 1)
         speedup = round(time_16 / time_128, 2)  # Batch size 128 (RTX 6000 Blackwell 96GB High-Throughput):
-        perf_analysis.append({'Benchmark': ds_2, 'Số Mẫu Test': n_samples, 'Số Batches (bs=16)': num_b_16, 'Thời Gian bs=16 (s)': time_16, 'Số Batches (bs=128)': num_b_128, 'Thời Gian bs=128 (s)': time_128, 'Tăng Tốc Blackwell': f'{speedup}x', 'VRAM Ước Tính (bs=128)': '25.5 GB / 96 GB (An toàn < 30%)'})
+        perf_analysis.append({'Benchmark': _ds, 'Số Mẫu Test': n_samples, 'Số Batches (bs=16)': num_b_16, 'Thời Gian bs=16 (s)': time_16, 'Số Batches (bs=128)': num_b_128, 'Thời Gian bs=128 (s)': time_128, 'Tăng Tốc Blackwell': f'{speedup}x', 'VRAM Ước Tính (bs=128)': '25.5 GB / 96 GB (An toàn < 30%)'})
     display(pd.DataFrame(perf_analysis))
     return
 

@@ -181,61 +181,16 @@ except Exception as _patch_err:
     pass
 
 # Tự động sửa lỗi pdb.set_trace() và import lỗi trong thư mục mã nguồn LLaDA-MedV nếu có trên đĩa
-import re
 for _cb in ([found_codebase] if found_codebase else []) + codebase_candidates:
     if _cb and Path(_cb).exists():
-        for _qf in Path(_cb).glob("**/qformer.py"):
-            try:
-                _txt = _qf.read_text(encoding="utf-8")
-                if "def find_pruneable_heads_and_indices" not in _txt:
-                    _qf_fix = \"\"\"from transformers.modeling_utils import PreTrainedModel
-
-def find_pruneable_heads_and_indices(heads, n_heads, head_size, already_pruned_heads):
-    mask = torch.ones(n_heads, head_size)
-    heads = sorted(set(heads) - already_pruned_heads)
-    for head in heads:
-        mask[head] = 0
-    mask = mask.view(-1).eq(1)
-    index = torch.arange(len(mask))[mask].long()
-    return set(heads), index
-
-def prune_linear_layer(layer, index, dim=0):
-    index = index.to(layer.weight.device)
-    W = layer.weight.index_select(dim, index).detach().clone()
-    if layer.bias is not None:
-        b = layer.bias.detach().clone() if dim == 1 else layer.bias[index].detach().clone()
-    new_size = list(layer.weight.size())
-    new_size[dim] = len(index)
-    new_layer = torch.nn.Linear(new_size[1], new_size[0], bias=layer.bias is not None).to(layer.weight.device)
-    new_layer.weight.requires_grad = False
-    new_layer.weight.copy_(W.contiguous())
-    new_layer.weight.requires_grad = True
-    if layer.bias is not None:
-        new_layer.bias.requires_grad = False
-        new_layer.bias.copy_(b.contiguous())
-        new_layer.bias.requires_grad = True
-    return new_layer
-
-def apply_chunking_to_forward(forward_fn, chunk_size, chunk_dim, *input_tensors):
-    chunked = list(zip(*map(lambda x: x.chunk(chunk_size, dim=chunk_dim), input_tensors)))
-    outputs = [forward_fn(*c) for c in chunked]
-    return outputs[0] if len(outputs) == 1 else torch.cat(outputs, dim=chunk_dim)
-\"\"\"
-                    _txt = re.sub(r"from transformers\.modeling_utils import \([^\)]+\)", _qf_fix, _txt)
-                    _txt = re.sub(r"from transformers\.modeling_utils import find_pruneable_heads_and_indices[^\n]+", _qf_fix, _txt)
-                    _qf.write_text(_txt, encoding="utf-8")
-            except Exception:
-                pass
         for _bp in Path(_cb).glob("**/builder.py"):
             try:
                 _txt = _bp.read_text(encoding="utf-8")
-                if "import pdb;pdb.set_trace()" in _txt:
-                    _txt = _txt.replace("import pdb;pdb.set_trace()", "kwargs['torch_dtype'] = torch.bfloat16")
-                if "from llava.model.language_model.llava_llada import LlavaLLaDAConfig" in _txt and "LlavaLLaDAModelLM" not in _txt:
-                    _txt = _txt.replace(
-                        "from llava.model.language_model.llava_llada import LlavaLLaDAConfig",
-                        "from llava.model.language_model.llava_llada import LlavaLLaDAModelLM, LlavaLLaDAConfig"
-                    )
+                _txt = _txt.replace("import pdb;pdb.set_trace()", "kwargs['torch_dtype'] = torch.bfloat16")
+                _txt = _txt.replace(
+                    "from llava.model.language_model.llava_llada import LlavaLLaDAConfig",
+                    "from llava.model.language_model.llava_llada import LlavaLLaDAModelLM, LlavaLLaDAConfig"
+                )
                 _bp.write_text(_txt, encoding="utf-8")
             except Exception:
                 pass
