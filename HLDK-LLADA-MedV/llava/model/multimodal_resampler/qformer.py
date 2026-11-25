@@ -36,20 +36,52 @@ from transformers.modeling_outputs import (
     SequenceClassifierOutput,
     TokenClassifierOutput,
 )
+from transformers.modeling_utils import PreTrainedModel
+
 try:
-    from transformers.modeling_utils import (
-        PreTrainedModel,
-        apply_chunking_to_forward,
-        find_pruneable_heads_and_indices,
-        prune_linear_layer,
-    )
-except ImportError:
-    from transformers.modeling_utils import PreTrainedModel
     from transformers.pytorch_utils import (
         apply_chunking_to_forward,
         find_pruneable_heads_and_indices,
         prune_linear_layer,
     )
+except ImportError:
+    try:
+        from transformers.modeling_utils import (
+            apply_chunking_to_forward,
+            find_pruneable_heads_and_indices,
+            prune_linear_layer,
+        )
+    except ImportError:
+        def find_pruneable_heads_and_indices(heads, n_heads, head_size, already_pruned_heads):
+            mask = torch.ones(n_heads, head_size)
+            heads = sorted(set(heads) - already_pruned_heads)
+            for head in heads:
+                mask[head] = 0
+            mask = mask.view(-1).eq(1)
+            index = torch.arange(len(mask))[mask].long()
+            return set(heads), index
+
+        def prune_linear_layer(layer, index, dim=0):
+            index = index.to(layer.weight.device)
+            W = layer.weight.index_select(dim, index).detach().clone()
+            if layer.bias is not None:
+                b = layer.bias.detach().clone() if dim == 1 else layer.bias[index].detach().clone()
+            new_size = list(layer.weight.size())
+            new_size[dim] = len(index)
+            new_layer = torch.nn.Linear(new_size[1], new_size[0], bias=layer.bias is not None).to(layer.weight.device)
+            new_layer.weight.requires_grad = False
+            new_layer.weight.copy_(W.contiguous())
+            new_layer.weight.requires_grad = True
+            if layer.bias is not None:
+                new_layer.bias.requires_grad = False
+                new_layer.bias.copy_(b.contiguous())
+                new_layer.bias.requires_grad = True
+            return new_layer
+
+        def apply_chunking_to_forward(forward_fn, chunk_size, chunk_dim, *input_tensors):
+            chunked = list(zip(*map(lambda x: x.chunk(chunk_size, dim=chunk_dim), input_tensors)))
+            outputs = [forward_fn(*c) for c in chunked]
+            return outputs[0] if len(outputs) == 1 else torch.cat(outputs, dim=chunk_dim)
 from transformers.utils import logging
 from transformers.models.bert.configuration_bert import BertConfig
 

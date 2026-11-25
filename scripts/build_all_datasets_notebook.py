@@ -111,7 +111,7 @@ if found_codebase is None:
         import subprocess
         print("📦 Đang tự động clone mã nguồn LLaDA-MedV từ GitHub vào môi trường Molab...")
         clone_target = WORKSPACE_ROOT / "LLaDA-MedV"
-        subprocess.run(["git", "clone", "--depth", "1", "https://github.com/LLM-VLM-GSL/LLaDA-MedV.git", str(clone_target)], check=True)
+        subprocess.run(["git", "clone", "--depth", "1", "https://github.com/HLDKNotFound/HLDK-LLADA-MedV.git", str(clone_target)], check=True)
         found_codebase = clone_target
         print("✅ Đã tải mã nguồn LLaDA-MedV thành công!")
     except Exception as e:
@@ -180,28 +180,63 @@ try:
 except Exception as _patch_err:
     pass
 
-# Tự động sửa lỗi pdb.set_trace() và import lỗi trong thư mục mã nguồn LLaDA-MedV nếu có
+# Tự động sửa lỗi pdb.set_trace() và import lỗi trong thư mục mã nguồn LLaDA-MedV nếu có trên đĩa
+import re
 for _cb in ([found_codebase] if found_codebase else []) + codebase_candidates:
     if _cb and Path(_cb).exists():
-        _qformer = Path(_cb) / "llava" / "model" / "multimodal_resampler" / "qformer.py"
-        if _qformer.exists():
+        for _qf in Path(_cb).glob("**/qformer.py"):
             try:
-                _txt = _qformer.read_text(encoding="utf-8")
-                if "from transformers.modeling_utils import find_pruneable_heads_and_indices" in _txt:
-                    _txt = _txt.replace(
-                        "from transformers.modeling_utils import find_pruneable_heads_and_indices, prune_linear_layer",
-                        "try:\\n    from transformers.modeling_utils import find_pruneable_heads_and_indices, prune_linear_layer\\nexcept ImportError:\\n    from transformers.pytorch_utils import find_pruneable_heads_and_indices, prune_linear_layer"
-                    )
-                    _qformer.write_text(_txt, encoding="utf-8")
+                _txt = _qf.read_text(encoding="utf-8")
+                if "def find_pruneable_heads_and_indices" not in _txt:
+                    _qf_fix = \"\"\"from transformers.modeling_utils import PreTrainedModel
+
+def find_pruneable_heads_and_indices(heads, n_heads, head_size, already_pruned_heads):
+    mask = torch.ones(n_heads, head_size)
+    heads = sorted(set(heads) - already_pruned_heads)
+    for head in heads:
+        mask[head] = 0
+    mask = mask.view(-1).eq(1)
+    index = torch.arange(len(mask))[mask].long()
+    return set(heads), index
+
+def prune_linear_layer(layer, index, dim=0):
+    index = index.to(layer.weight.device)
+    W = layer.weight.index_select(dim, index).detach().clone()
+    if layer.bias is not None:
+        b = layer.bias.detach().clone() if dim == 1 else layer.bias[index].detach().clone()
+    new_size = list(layer.weight.size())
+    new_size[dim] = len(index)
+    new_layer = torch.nn.Linear(new_size[1], new_size[0], bias=layer.bias is not None).to(layer.weight.device)
+    new_layer.weight.requires_grad = False
+    new_layer.weight.copy_(W.contiguous())
+    new_layer.weight.requires_grad = True
+    if layer.bias is not None:
+        new_layer.bias.requires_grad = False
+        new_layer.bias.copy_(b.contiguous())
+        new_layer.bias.requires_grad = True
+    return new_layer
+
+def apply_chunking_to_forward(forward_fn, chunk_size, chunk_dim, *input_tensors):
+    chunked = list(zip(*map(lambda x: x.chunk(chunk_size, dim=chunk_dim), input_tensors)))
+    outputs = [forward_fn(*c) for c in chunked]
+    return outputs[0] if len(outputs) == 1 else torch.cat(outputs, dim=chunk_dim)
+\"\"\"
+                    _txt = re.sub(r"from transformers\.modeling_utils import \([^\)]+\)", _qf_fix, _txt)
+                    _txt = re.sub(r"from transformers\.modeling_utils import find_pruneable_heads_and_indices[^\n]+", _qf_fix, _txt)
+                    _qf.write_text(_txt, encoding="utf-8")
             except Exception:
                 pass
-        _builder = Path(_cb) / "llava" / "model" / "builder.py"
-        if _builder.exists():
+        for _bp in Path(_cb).glob("**/builder.py"):
             try:
-                _txt = _builder.read_text(encoding="utf-8")
+                _txt = _bp.read_text(encoding="utf-8")
                 if "import pdb;pdb.set_trace()" in _txt:
                     _txt = _txt.replace("import pdb;pdb.set_trace()", "kwargs['torch_dtype'] = torch.bfloat16")
-                    _builder.write_text(_txt, encoding="utf-8")
+                if "from llava.model.language_model.llava_llada import LlavaLLaDAConfig" in _txt and "LlavaLLaDAModelLM" not in _txt:
+                    _txt = _txt.replace(
+                        "from llava.model.language_model.llava_llada import LlavaLLaDAConfig",
+                        "from llava.model.language_model.llava_llada import LlavaLLaDAModelLM, LlavaLLaDAConfig"
+                    )
+                _bp.write_text(_txt, encoding="utf-8")
             except Exception:
                 pass
 
@@ -606,6 +641,8 @@ if RUN_LIVE_INFERENCE and torch.cuda.is_available():
         live_model.eval()
         print("✅ Nạp thành công mô hình LLaDA-MedV vào 96GB VRAM!")
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         print(f"⚠️ Chưa thể nạp Live Model ({e}). Sẽ sử dụng kết quả đối soát chuẩn hóa từ bài báo CVPR 2026.")
         live_model = None
 else:

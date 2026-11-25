@@ -232,7 +232,7 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
                 cfg_pretrained = AutoConfig.from_pretrained(model_path)
                 model = LlavaGemmaForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, config=cfg_pretrained, attn_implementation=attn_implementation, **kwargs)
             elif "llada" in model_name.lower():
-                from llava.model.language_model.llava_llada import LlavaLLaDAConfig
+                from llava.model.language_model.llava_llada import LlavaLLaDAModelLM, LlavaLLaDAConfig
 
                 tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
                 if customized_config is None:
