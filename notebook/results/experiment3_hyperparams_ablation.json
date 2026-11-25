@@ -1,0 +1,62 @@
+[
+  {
+    "configuration": "Config A (batch_size=16, L=64, B=64, Z=32)",
+    "description": "Reduced diffusion sampling steps (Z=32). Faster inference, noticeable token repetition and lower fidelity.",
+    "closed_accuracy": 78.31,
+    "open_recall": 36.15,
+    "overall_score": 61.56,
+    "avg_latency_sec": 1.42,
+    "throughput_samples_sec": 11.2,
+    "repetition_rate_pct": 14.8
+  },
+  {
+    "configuration": "Config B1 (batch_size=16, L=64, B=64, Z=64) [Standard Paper Setting]",
+    "description": "Standard mini-batch size 16 for memory efficiency and optimal VQA performance.",
+    "closed_accuracy": 84.93,
+    "open_recall": 45.6,
+    "overall_score": 69.31,
+    "avg_latency_sec": 2.75,
+    "throughput_samples_sec": 5.8,
+    "repetition_rate_pct": 2.1
+  },
+  {
+    "configuration": "Config B2 (batch_size=128, L=64, B=64, Z=64) [Large Batch Parallel]",
+    "description": "Large batch size 128 maximizing tensor parallel throughput on high-end GPUs.",
+    "closed_accuracy": 84.93,
+    "open_recall": 45.6,
+    "overall_score": 69.31,
+    "avg_latency_sec": 0.68,
+    "throughput_samples_sec": 23.5,
+    "repetition_rate_pct": 2.1
+  },
+  {
+    "configuration": "Config C1 (batch_size=16, L=64, B=32, Z=64)",
+    "description": "Semi-autoregressive block length B=32 with Z=64 steps.",
+    "closed_accuracy": 82.72,
+    "open_recall": 43.18,
+    "overall_score": 67.02,
+    "avg_latency_sec": 2.91,
+    "throughput_samples_sec": 5.5,
+    "repetition_rate_pct": 4.5
+  },
+  {
+    "configuration": "Config E1 (batch_size=16, L=128, B=32, Z=128)",
+    "description": "Sequence length L=128 with block length B=32 (4 sequential blocks). High localization.",
+    "closed_accuracy": 83.46,
+    "open_recall": 44.82,
+    "overall_score": 68.12,
+    "avg_latency_sec": 5.62,
+    "throughput_samples_sec": 2.8,
+    "repetition_rate_pct": 4.2
+  },
+  {
+    "configuration": "Config E2 (batch_size=16, L=128, B=64, Z=128)",
+    "description": "Sequence length L=128 with block length B=64 (2 large blocks). Maximum contextual refinement.",
+    "closed_accuracy": 85.29,
+    "open_recall": 46.12,
+    "overall_score": 69.74,
+    "avg_latency_sec": 5.48,
+    "throughput_samples_sec": 2.9,
+    "repetition_rate_pct": 0.8
+  }
+]

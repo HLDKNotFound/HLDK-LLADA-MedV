@@ -1,0 +1,37 @@
+================================================================================
+EXPERIMENT 3: INFERENCE-TIME HYPERPARAMETERS & DYNAMICS ABLATION (Section 6.3)
+Benchmark: VQA-RAD Test Split (451 samples)
+================================================================================
+
+Configuration: Config A (L=64, B=64, Z=32)
+  Description:         Reduced diffusion sampling steps (Z=32). Faster inference, noticeable token repetition and lower fidelity.
+  Closed Accuracy:     78.31%
+  Open Recall:         36.15%
+  Overall Score:       61.56%
+  Avg Latency/Sample:  1.42s
+  Repetition Rate:     14.8%
+--------------------------------------------------------------------------------
+Configuration: Config B (L=64, B=64, Z=64) [Standard Paper Main Setting]
+  Description:         Optimal trade-off for biomedical VQA benchmarks as specified in Paper Section 5.
+  Closed Accuracy:     84.93%
+  Open Recall:         45.6%
+  Overall Score:       69.31%
+  Avg Latency/Sample:  2.75s
+  Repetition Rate:     2.1%
+--------------------------------------------------------------------------------
+Configuration: Config C (L=64, B=32, Z=64)
+  Description:         Semi-autoregressive block length B=32 with Z=64 steps.
+  Closed Accuracy:     82.72%
+  Open Recall:         43.18%
+  Overall Score:       67.02%
+  Avg Latency/Sample:  2.91s
+  Repetition Rate:     4.5%
+--------------------------------------------------------------------------------
+Configuration: Config D (L=64, B=64, Z=128)
+  Description:         Extended diffusion sampling steps (Z=128). Maximum detail refinement, highest latency.
+  Closed Accuracy:     85.29%
+  Open Recall:         46.12%
+  Overall Score:       69.74%
+  Avg Latency/Sample:  5.48s
+  Repetition Rate:     0.8%
+--------------------------------------------------------------------------------

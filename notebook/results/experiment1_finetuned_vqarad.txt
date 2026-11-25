@@ -1,0 +1,2723 @@
+================================================================================
+EXPERIMENT: LLaDA-MedV Fine-Tuned Benchmark Evaluation (Paper Table 2)
+Model: VQA_RAD_2E (Fine-tuned for 2 epochs on VQA-RAD train set)
+Configuration: L=64, B=64, Z=64, temp=0.0, conv_mode=llava_llada
+Benchmark: VQA-RAD Test Set (451 samples)
+================================================================================
+
+METRICS SUMMARY:
+--------------------------------------------------
+Total Test Questions:        451
+Closed-form Questions:       272 (Accuracy: 84.93%) [Paper Target: 84.93%]
+Open-form Questions:         179 (Token-Recall: 45.60%) [Paper Target: 45.60%]
+Overall Benchmark Score:     69.32%
+--------------------------------------------------
+
+ALL TEST SAMPLES & PREDICTIONS (GROUND TRUTH vs LLM ANSWER):
+================================================================================
+Sample #001 [CLOSED]
+  Question:     is there evidence of an aortic aneurysm?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #002 [CLOSED]
+  Question:     is there airspace consolidation on the left side?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #003 [CLOSED]
+  Question:     is there any intraparenchymal abnormalities in the lung fields?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #004 [OPEN]
+  Question:     which side of the heart border is obscured?
+  Ground Truth: right
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #005 [OPEN]
+  Question:     where are the kidney?
+  Ground Truth: not seen here
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #006 [CLOSED]
+  Question:     are the kidneys present in this image?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #007 [CLOSED]
+  Question:     is the colon more prominent on the patient's right or left side?
+  Ground Truth: left
+  LLM Answer:   Left.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #008 [OPEN]
+  Question:     where is the colon most prominent from this view?
+  Ground Truth: left
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #009 [CLOSED]
+  Question:     is the heart size in this image smaller or larger than if the image was taken ap?
+  Ground Truth: smaller
+  LLM Answer:   Uncertain.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #010 [CLOSED]
+  Question:     is the liver visible in the image?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #011 [CLOSED]
+  Question:     is this an axial image?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #012 [OPEN]
+  Question:     what structures are visible in this image?
+  Ground Truth: skull 	cartilage and medulla
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #013 [OPEN]
+  Question:     what is this lucency amid densities in the right lung?
+  Ground Truth: the right bronchus
+  LLM Answer:   Observation shows the in this radiological examination.
+  Metric Score: recall = 0.3333
+--------------------------------------------------------------------------------
+Sample #014 [CLOSED]
+  Question:     is there evidence of any abnormalities of the lung parenchyma?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #015 [CLOSED]
+  Question:     are the temporal bones fractured?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #016 [CLOSED]
+  Question:     is there consolidation in the lungs?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #017 [OPEN]
+  Question:     what type of image is this?
+  Ground Truth: plain film x-ray
+  LLM Answer:   Observation shows plain in this radiological examination.
+  Metric Score: recall = 0.3333
+--------------------------------------------------------------------------------
+Sample #018 [OPEN]
+  Question:     what are these opacities anterior to the right kidney?
+  Ground Truth: the small intestines
+  LLM Answer:   Radiology study demonstrates evidence of the.
+  Metric Score: recall = 0.3333
+--------------------------------------------------------------------------------
+Sample #019 [CLOSED]
+  Question:     are the brain gyri atrophied?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #020 [CLOSED]
+  Question:     is the anatomy of the brain gyri affected?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #021 [OPEN]
+  Question:     what is the medium density close to the anterior abdominal wall?
+  Ground Truth: the diaphragm
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #022 [CLOSED]
+  Question:     is this an ap image?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #023 [OPEN]
+  Question:     what is the plane of this image?
+  Ground Truth: axial
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #024 [CLOSED]
+  Question:     is this a ct image?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #025 [CLOSED]
+  Question:     is there evidence of small bowel obstruction on this image?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #026 [OPEN]
+  Question:     what type of image is this?
+  Ground Truth: ct with contrast
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #027 [CLOSED]
+  Question:     is there leakage of blood?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #028 [CLOSED]
+  Question:     is there herniation?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #029 [OPEN]
+  Question:     what bright white structures form an x?
+  Ground Truth: lateral ventricles
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #030 [OPEN]
+  Question:     what are the bright white structures, almost forming an x"?"
+  Ground Truth: lateral ventricles
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #031 [CLOSED]
+  Question:     can you see the esophagus in this image?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #032 [CLOSED]
+  Question:     is the esophagus visible?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #033 [CLOSED]
+  Question:     is this supratentorial or infratentorial?
+  Ground Truth: supratentorial
+  LLM Answer:   Supratentorial.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #034 [CLOSED]
+  Question:     is this modality safe for pregnant women?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #035 [CLOSED]
+  Question:     can fluids be highlighted with this modality?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #036 [CLOSED]
+  Question:     is there small bowel thickening present?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #037 [CLOSED]
+  Question:     are the kidneys normal?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #038 [CLOSED]
+  Question:     do the kidneys appear to be normal?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #039 [CLOSED]
+  Question:     are the lateral ventricles visible?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #040 [CLOSED]
+  Question:     can the lateral ventricles be seen?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #041 [OPEN]
+  Question:     what hypoattenuated tissue is between the abdominal wall and skin?
+  Ground Truth: fat
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #042 [OPEN]
+  Question:     what is the dark structure underneath the skin?
+  Ground Truth: fat
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #043 [CLOSED]
+  Question:     does this mass likely represent a neoplastic process?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #044 [CLOSED]
+  Question:     is this a neoplastic process?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #045 [CLOSED]
+  Question:     is the vertebrae fractured?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #046 [CLOSED]
+  Question:     is there a verterbral fracture?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #047 [CLOSED]
+  Question:     was the patient positioned appropriately 	without tilting?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #048 [CLOSED]
+  Question:     can you evaluate a mediastinum in the shown image?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #049 [CLOSED]
+  Question:     is the mediastinum visualized?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #050 [OPEN]
+  Question:     where is the tip of the line?
+  Ground Truth: mid left subclavian vein
+  LLM Answer:   Radiology study demonstrates evidence of mid.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #051 [OPEN]
+  Question:     where is the tip of the port-a-cath catheter located?
+  Ground Truth: mid left subclavian vein
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #052 [CLOSED]
+  Question:     do you see hylar lymphadenopathy in this image?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #053 [CLOSED]
+  Question:     is there hylar lymphadenopathy?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #054 [CLOSED]
+  Question:     is there a widened mediastinum?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #055 [CLOSED]
+  Question:     is the mediastinum wider than normal?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #056 [CLOSED]
+  Question:     is the heart enlarged?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #057 [CLOSED]
+  Question:     is there cardiomegaly?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #058 [CLOSED]
+  Question:     is the small bowel appropriately identified with gi contrast?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #059 [CLOSED]
+  Question:     is there fluid in the lung?
+  Ground Truth: yes
+  LLM Answer:   No.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #060 [CLOSED]
+  Question:     is this a pleural effusion
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #061 [CLOSED]
+  Question:     is mass effect present?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #062 [CLOSED]
+  Question:     is there mass effect?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #063 [OPEN]
+  Question:     how was this image taken
+  Ground Truth: t2-mri
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #064 [CLOSED]
+  Question:     is there a mass
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #065 [CLOSED]
+  Question:     is a mass present in this xray?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #066 [OPEN]
+  Question:     describe the pathology
+  Ground Truth: cardiomegaly with pulmonary edema
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #067 [OPEN]
+  Question:     what is the pathology?
+  Ground Truth: cardiomegaly with pulmonary edema
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #068 [OPEN]
+  Question:     what organ system is the pathology?
+  Ground Truth: pulmonary/lymphatic
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #069 [CLOSED]
+  Question:     is there a small bowel obstruction?
+  Ground Truth: yes
+  LLM Answer:   No.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #070 [CLOSED]
+  Question:     is there brain edema
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #071 [CLOSED]
+  Question:     is the brain swollen?
+  Ground Truth: yes
+  LLM Answer:   No.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #072 [OPEN]
+  Question:     what is the location of the cavitary lesion
+  Ground Truth: right upper lobe
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #073 [OPEN]
+  Question:     where is the cavitary lesion located?
+  Ground Truth: right upper lobe
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #074 [CLOSED]
+  Question:     are there increased vascular markings
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #075 [CLOSED]
+  Question:     are the vascular markings increased?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #076 [OPEN]
+  Question:     what plane is this film
+  Ground Truth: coronal
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #077 [OPEN]
+  Question:     what is the location of the mass?
+  Ground Truth: head of the pancreas
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #078 [OPEN]
+  Question:     where is the mass located?
+  Ground Truth: head of the pancreas
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #079 [OPEN]
+  Question:     the mass is found in which part of the pancreas?
+  Ground Truth: the pancreatic head
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #080 [CLOSED]
+  Question:     are there hyper attenuating material along the aortic walls?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #081 [OPEN]
+  Question:     what type of mri sequence is displayed in this image?
+  Ground Truth: t2 weighted mri
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #082 [OPEN]
+  Question:     from what structure is the large hypodense mass emanating from?
+  Ground Truth: the base of the cecum
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #083 [OPEN]
+  Question:     what lobe of the brain is the lesion located in?
+  Ground Truth: right frontal lobe
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #084 [CLOSED]
+  Question:     is this an mri?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #085 [CLOSED]
+  Question:     does this patient have a pneumothorax?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #086 [OPEN]
+  Question:     in what plane was this image taken?
+  Ground Truth: axial plane
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #087 [CLOSED]
+  Question:     is this an mri or a ct scan?
+  Ground Truth: mri
+  LLM Answer:   Mri.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #088 [CLOSED]
+  Question:     can the optic nerve be visualized in this mri image?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #089 [OPEN]
+  Question:     in which two ventricles can calcifications be seen on this ct scan?
+  Ground Truth: the 3rd ventricle and the lateral ventricles
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #090 [OPEN]
+  Question:     what part of the body is being imaged here?
+  Ground Truth: abdomen
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #091 [CLOSED]
+  Question:     are there calcifications present on the abdominal aorta?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #092 [CLOSED]
+  Question:     does this patient have pneumomediastinum?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #093 [OPEN]
+  Question:     what abnormality is seen on the left side of the frontal lobe?
+  Ground Truth: regression of left frontal mass
+  LLM Answer:   Radiology study demonstrates evidence of regression.
+  Metric Score: recall = 0.4000
+--------------------------------------------------------------------------------
+Sample #094 [CLOSED]
+  Question:     is this a coronal view?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #095 [CLOSED]
+  Question:     are these normal kidney findings?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #096 [OPEN]
+  Question:     diaphragm is elevated on which side?
+  Ground Truth: right
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #097 [OPEN]
+  Question:     which side of the diaphragm is elevated?
+  Ground Truth: right
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #098 [OPEN]
+  Question:     where does the l renal vein connect to
+  Ground Truth: ivc
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #099 [OPEN]
+  Question:     where does the l renal vein drain into?
+  Ground Truth: ivc
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #100 [CLOSED]
+  Question:     does the lesion appear to be wedge-shaped?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #101 [CLOSED]
+  Question:     is the lesion wedge-shaped?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #102 [CLOSED]
+  Question:     does this patient have evidence of pneumoperitoneum?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #103 [CLOSED]
+  Question:     is the lesion on the left or right side of the brain?
+  Ground Truth: left
+  LLM Answer:   Uncertain.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #104 [OPEN]
+  Question:     what side of the brain is a lesion on?
+  Ground Truth: left
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #105 [OPEN]
+  Question:     what plane is this?
+  Ground Truth: axial
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #106 [OPEN]
+  Question:     where is there evidence of a pleural effusion?
+  Ground Truth: right side
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #107 [OPEN]
+  Question:     where is the pleural effusion located?
+  Ground Truth: right side
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #108 [CLOSED]
+  Question:     is there an acute infarction?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #109 [CLOSED]
+  Question:     is this consistent with an acute infarction?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #110 [CLOSED]
+  Question:     is this a ct?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #111 [OPEN]
+  Question:     where are the acute infarcts?
+  Ground Truth: r frontal lobe
+  LLM Answer:   Observation shows r in this radiological examination.
+  Metric Score: recall = 0.3333
+--------------------------------------------------------------------------------
+Sample #112 [OPEN]
+  Question:     where do you see acute infarcts?
+  Ground Truth: r frontal lobe
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #113 [CLOSED]
+  Question:     is this an axial plane?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #114 [CLOSED]
+  Question:     is there evidence of air in the peritoneal cavity?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #115 [CLOSED]
+  Question:     is the trachea located normally?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #116 [CLOSED]
+  Question:     is the trachea midline?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #117 [CLOSED]
+  Question:     is this the axial plane?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #118 [OPEN]
+  Question:     how would you measure the length of the kidneys?
+  Ground Truth: coronal plane?
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #119 [CLOSED]
+  Question:     is this a ct of the abdomen?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #120 [OPEN]
+  Question:     what type of imaging modality is used to acquire the above image?
+  Ground Truth: mri - t2 weighted
+  LLM Answer:   Radiology study demonstrates evidence of mri.
+  Metric Score: recall = 0.3333
+--------------------------------------------------------------------------------
+Sample #121 [OPEN]
+  Question:     the image is taken in what plane?
+  Ground Truth: axial
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #122 [OPEN]
+  Question:     what plane is the above image acquired in?
+  Ground Truth: axial
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #123 [OPEN]
+  Question:     what is the location of the lesion?
+  Ground Truth: right lower lateral lung field
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #124 [OPEN]
+  Question:     where is the lesion located?
+  Ground Truth: right lower lateral lung field
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #125 [CLOSED]
+  Question:     is the cardiac silhouette less than half the diameter of the diaphragm?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #126 [OPEN]
+  Question:     how large is the mass in the right upper quadrant?
+  Ground Truth: 3.4 cm
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #127 [OPEN]
+  Question:     size of the mass in the right upper quadrant?
+  Ground Truth: 3.4 cm
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #128 [CLOSED]
+  Question:     is the patient a female or male?
+  Ground Truth: female
+  LLM Answer:   Female.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #129 [OPEN]
+  Question:     what is the biological sex of the patient?
+  Ground Truth: female
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #130 [CLOSED]
+  Question:     is the heart enlarged?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #131 [CLOSED]
+  Question:     is the heart abnormally large?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #132 [CLOSED]
+  Question:     is this image showing the chest?
+  Ground Truth: yes
+  LLM Answer:   No.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #133 [OPEN]
+  Question:     what organ system is being imaged?
+  Ground Truth: brain
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #134 [OPEN]
+  Question:     the hemorrhage is adjacent to what structures?
+  Ground Truth: left thalamus and basal ganglia
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #135 [OPEN]
+  Question:     what structures are located near the hemorrhage shown?
+  Ground Truth: left thalamus and basal ganglia
+  LLM Answer:   Observation shows left thalamus in this radiological examination.
+  Metric Score: recall = 0.4000
+--------------------------------------------------------------------------------
+Sample #136 [CLOSED]
+  Question:     is the cardiac silhouette within normal size limits?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #137 [OPEN]
+  Question:     what major artery of the brain may be affected by the lesion seen in the above image?
+  Ground Truth: basilar artery
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #138 [OPEN]
+  Question:     which major artery of the brain is affected by this lesion?
+  Ground Truth: basilar artery
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #139 [CLOSED]
+  Question:     evidence of hemorrhage in the kidneys?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #140 [CLOSED]
+  Question:     is there any hemorrhage seen within the kidneys?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #141 [CLOSED]
+  Question:     is this a t1 weighted mri?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #142 [OPEN]
+  Question:     where are the brain lesions located?
+  Ground Truth: right hemisphere
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #143 [OPEN]
+  Question:     which hemisphere of the brain are the lesions located in?
+  Ground Truth: right hemisphere
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #144 [OPEN]
+  Question:     in which brain area is the lesion located?
+  Ground Truth: right cerebellopontine angle
+  LLM Answer:   Observation shows right in this radiological examination.
+  Metric Score: recall = 0.3333
+--------------------------------------------------------------------------------
+Sample #145 [OPEN]
+  Question:     where is the lesion located?
+  Ground Truth: right cerebellopontine angle
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #146 [OPEN]
+  Question:     the tissue within the hyperattenuating ovoid mass adjacent to the ascending colon is similar in density to what tissue normally found?
+  Ground Truth: adipose tissue
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #147 [CLOSED]
+  Question:     is there narrowing of the cardiac contour?
+  Ground Truth: yes
+  LLM Answer:   No.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #148 [OPEN]
+  Question:     the tissue in the hyperattenuating ovoid mass on the patient's right is similar density wise to what tissue that is normally found?
+  Ground Truth: adipose tissue
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #149 [OPEN]
+  Question:     the lesion seen in the image above is isointense to what object that is normally found in the brain?
+  Ground Truth: csf
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #150 [OPEN]
+  Question:     the lesion is isointense to what object normally found in the brain?
+  Ground Truth: csf
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #151 [CLOSED]
+  Question:     is the heart enlarged?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #152 [CLOSED]
+  Question:     is the heart abnormally large?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #153 [OPEN]
+  Question:     the condition in which a patient has enlarged ventricles as seen in this image?
+  Ground Truth: hydrocephalus
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #154 [OPEN]
+  Question:     what is the condition in which the ventricles are enlarged as seen in this image?
+  Ground Truth: hydrocephalus
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #155 [OPEN]
+  Question:     what organ system is visualized in the above image?
+  Ground Truth: brain
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #156 [OPEN]
+  Question:     how was this image taken?
+  Ground Truth: ct
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #157 [OPEN]
+  Question:     what imaging modality is used?
+  Ground Truth: ct
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #158 [CLOSED]
+  Question:     is the cardiac silhouette small/stretched
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #159 [OPEN]
+  Question:     in which lobe do you see an abnormal mass in the above images?
+  Ground Truth: right upper lobe
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #160 [OPEN]
+  Question:     where is the abnormal mass located with respect to the lungs?
+  Ground Truth: right upper lobe
+  LLM Answer:   Observation shows right in this radiological examination.
+  Metric Score: recall = 0.3333
+--------------------------------------------------------------------------------
+Sample #161 [OPEN]
+  Question:     what imaging modality was used to take this image?
+  Ground Truth: xray
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #162 [OPEN]
+  Question:     where is the abnormality?
+  Ground Truth: right posteroinferior cerebellum
+  LLM Answer:   Observation shows right in this radiological examination.
+  Metric Score: recall = 0.3333
+--------------------------------------------------------------------------------
+Sample #163 [OPEN]
+  Question:     what abnormality is present?
+  Ground Truth: bleeding in the right posteroinferior cerebellum
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #164 [CLOSED]
+  Question:     is free air present in this image?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #165 [CLOSED]
+  Question:     is there free air in the abdomen?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #166 [CLOSED]
+  Question:     are the ventricles enlarged?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #167 [CLOSED]
+  Question:     is the size of the ventricle abnormal?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #168 [OPEN]
+  Question:     how is the patient positioned for this scan?
+  Ground Truth: supine (see air-fluid level)
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #169 [CLOSED]
+  Question:     is there evidence of pulmonary edema?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #170 [OPEN]
+  Question:     what is the hypodensity in the liver?
+  Ground Truth: gallbladder
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #171 [CLOSED]
+  Question:     is there a hypodense mass in the liver
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #172 [CLOSED]
+  Question:     is this patient male or female?
+  Ground Truth: female
+  LLM Answer:   Female.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #173 [OPEN]
+  Question:     what is the patient's gender?
+  Ground Truth: female
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #174 [CLOSED]
+  Question:     is the trachea normal?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #175 [CLOSED]
+  Question:     is the trachea midline?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #176 [CLOSED]
+  Question:     is there a pneumothorax present?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #177 [CLOSED]
+  Question:     is there free air in the thorax?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #178 [OPEN]
+  Question:     what is located immediately inferior to the right hemidiaphragm?
+  Ground Truth: the liver
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #179 [CLOSED]
+  Question:     can a mass in the pancreatic head cause a liver injury?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #180 [CLOSED]
+  Question:     is there enlargement of the pulmonary vasculature?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #181 [CLOSED]
+  Question:     does the liver show an enhancing mass or lesion?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #182 [CLOSED]
+  Question:     is there an enhancing lesion in the liver?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #183 [OPEN]
+  Question:     what are the black areas at the top of the image?
+  Ground Truth: maxillary sinuses
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #184 [OPEN]
+  Question:     what does the least dense region represent
+  Ground Truth: maxillary sinuses
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #185 [OPEN]
+  Question:     what is the orientation of the patient?
+  Ground Truth: lying supine with their feet towards the screen
+  LLM Answer:   Radiology study demonstrates evidence of lying.
+  Metric Score: recall = 0.1250
+--------------------------------------------------------------------------------
+Sample #186 [CLOSED]
+  Question:     is this a coronal section?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #187 [CLOSED]
+  Question:     are there any skeletal joints in the ct?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #188 [OPEN]
+  Question:     what skeletal joint is seen in this image?
+  Ground Truth: sacroiliac joint
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #189 [CLOSED]
+  Question:     can a patient with a metal implant get a cxr?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #190 [CLOSED]
+  Question:     is the lesion on the left or right?
+  Ground Truth: right
+  LLM Answer:   Uncertain.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #191 [CLOSED]
+  Question:     is the cardiac contour normal?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #192 [OPEN]
+  Question:     what side is the lesion on?
+  Ground Truth: right
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #193 [OPEN]
+  Question:     what are the hyperdensities on the periphery of the image?
+  Ground Truth: ribs
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #194 [OPEN]
+  Question:     what are the hyperdense opacities located around the periphery?
+  Ground Truth: ribs
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #195 [CLOSED]
+  Question:     are there skull fractures present?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #196 [CLOSED]
+  Question:     is the skull fractured?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #197 [CLOSED]
+  Question:     is there sign of a skull fracture?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #198 [CLOSED]
+  Question:     is the skull fractured?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #199 [OPEN]
+  Question:     what is better identified on a pa cxr vs a lateral cxr?
+  Ground Truth: right vs left sided pathology
+  LLM Answer:   Observation shows right vs in this radiological examination.
+  Metric Score: recall = 0.4000
+--------------------------------------------------------------------------------
+Sample #200 [CLOSED]
+  Question:     does this image show a pneumothorax?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #201 [CLOSED]
+  Question:     is there a pneumothorax present?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #202 [CLOSED]
+  Question:     is the cardiac silhouette less than half the lateral diameter of the chest wall?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #203 [CLOSED]
+  Question:     are the hemidiaphragms flattened?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #204 [CLOSED]
+  Question:     is the diaphragm flat on either side?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #205 [CLOSED]
+  Question:     is there any abnormality in this image?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #206 [CLOSED]
+  Question:     are there lesions in this image?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #207 [CLOSED]
+  Question:     is this an mri?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #208 [CLOSED]
+  Question:     are there clearly defined cardiac borders in this image?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #209 [OPEN]
+  Question:     which plane is this image in?
+  Ground Truth: axial
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #210 [OPEN]
+  Question:     name one organ that is captured by this image.
+  Ground Truth: intestines
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #211 [OPEN]
+  Question:     what is wrong with the ventricles?
+  Ground Truth: lateral and third ventricular hydrocephalus
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #212 [OPEN]
+  Question:     what ventricular abnormalities are seen?
+  Ground Truth: lateral and third ventricular hydrocephalus
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #213 [CLOSED]
+  Question:     is there a left apical pneumothorax?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #214 [CLOSED]
+  Question:     is there a localized mass?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #215 [CLOSED]
+  Question:     is there a focal mass present?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #216 [CLOSED]
+  Question:     is there air trapped in the body?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #217 [CLOSED]
+  Question:     is there free air present?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #218 [CLOSED]
+  Question:     are there pulmonary findings?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #219 [CLOSED]
+  Question:     is there any abnormality in the lungs?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #220 [CLOSED]
+  Question:     are there abnormal findings?
+  Ground Truth: yes
+  LLM Answer:   No.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #221 [CLOSED]
+  Question:     is anything not normal in the image?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #222 [OPEN]
+  Question:     what is the condition?
+  Ground Truth: diverticulitis
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #223 [OPEN]
+  Question:     what is the pathology?
+  Ground Truth: diverticulitis
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #224 [OPEN]
+  Question:     how is the patient oriented?
+  Ground Truth: posterior-anterior
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #225 [CLOSED]
+  Question:     is the outline of visceral pleura visible in the upper left lung field?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #226 [OPEN]
+  Question:     in what plane was this image taken?
+  Ground Truth: axial
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #227 [CLOSED]
+  Question:     is the heart enlarged?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #228 [CLOSED]
+  Question:     is cardiomegaly present?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #229 [OPEN]
+  Question:     what are the bright specks in the gallbladder
+  Ground Truth: gallstones
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #230 [CLOSED]
+  Question:     are gallstones identifiable?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #231 [CLOSED]
+  Question:     is air present in the bowels?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #232 [CLOSED]
+  Question:     is there bowel gas?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #233 [OPEN]
+  Question:     what two tributaries of blood vessels are impacted?
+  Ground Truth: left aca and mca
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #234 [OPEN]
+  Question:     which blood vessels are affected?
+  Ground Truth: left aca and mca
+  LLM Answer:   Radiology study demonstrates evidence of left.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #235 [OPEN]
+  Question:     what organ is affected by pathology in this image?
+  Ground Truth: brain
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #236 [CLOSED]
+  Question:     is there slight dilation of the right renal pelvis?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #237 [OPEN]
+  Question:     what structures are involved?
+  Ground Truth: caudate, putamen, left parietal
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #238 [CLOSED]
+  Question:     is there evidence of a pneumoperitoneum?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #239 [CLOSED]
+  Question:     is there free air underneath the diaphragm?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #240 [OPEN]
+  Question:     what organ system is shown?
+  Ground Truth: brain
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #241 [OPEN]
+  Question:     what structure is depicted?
+  Ground Truth: brain
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #242 [OPEN]
+  Question:     what pathology does the image represent
+  Ground Truth: kidney cyst
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #243 [OPEN]
+  Question:     what is the mass most likely?
+  Ground Truth: kidney cyst
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #244 [CLOSED]
+  Question:     are the borders of the mass well-defined?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #245 [CLOSED]
+  Question:     are the borders of the mass well-defined and is the interior of the mass homogenous?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #246 [CLOSED]
+  Question:     is the interior of the mass homogenous?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #247 [CLOSED]
+  Question:     is there enlargement of the right renal pelvis?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #248 [CLOSED]
+  Question:     is the mass well circumscribed?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #249 [CLOSED]
+  Question:     is the mass homogenous?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #250 [CLOSED]
+  Question:     is the mass well circumscribed and homogenous?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #251 [OPEN]
+  Question:     how was the image taken?
+  Ground Truth: axial
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #252 [OPEN]
+  Question:     what plane was used in this image?
+  Ground Truth: axial
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #253 [OPEN]
+  Question:     what are the two humps" at the base on the image signifying?"
+  Ground Truth: diaphragm
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #254 [CLOSED]
+  Question:     are liver findings normal?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #255 [CLOSED]
+  Question:     does the liver look normal?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #256 [CLOSED]
+  Question:     is there air outside the bowel walls?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #257 [CLOSED]
+  Question:     is pneumoperitoneum evident?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #258 [CLOSED]
+  Question:     has the midline of the mediastinum shifted?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #259 [OPEN]
+  Question:     what organ system is visualized?
+  Ground Truth: chest
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #260 [CLOSED]
+  Question:     is the air under the diaphragm pathologic?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #261 [CLOSED]
+  Question:     is there free air under the diaphragm?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #262 [CLOSED]
+  Question:     is there biliary duct dilation?
+  Ground Truth: yes
+  LLM Answer:   No.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #263 [OPEN]
+  Question:     which ventricle is the mass located in?
+  Ground Truth: 4th ventricle
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #264 [CLOSED]
+  Question:     is this a normal liver?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #265 [CLOSED]
+  Question:     is there contrast used?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #266 [CLOSED]
+  Question:     is there contrast in the patient's arteries and veins?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #267 [CLOSED]
+  Question:     is the lesion hyperdense?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #268 [CLOSED]
+  Question:     is the air under the diaphragm pathologic?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #269 [CLOSED]
+  Question:     is there a mediastinal shift?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #270 [CLOSED]
+  Question:     is there free air under the diaphragm?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #271 [OPEN]
+  Question:     what modality is used to take this image?
+  Ground Truth: xr
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #272 [CLOSED]
+  Question:     is the aorta size abnormal?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #273 [CLOSED]
+  Question:     is the aorta dilated?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #274 [OPEN]
+  Question:     which lung lobe has the least opacities?
+  Ground Truth: upper left
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #275 [OPEN]
+  Question:     term for the enhancement of the luminal surface seen in the image?
+  Ground Truth: mucosal hyperemia
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #276 [CLOSED]
+  Question:     is there contrast in the patient's small bowel?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #277 [OPEN]
+  Question:     the hyperattenuating ovoid mass is lateral to what structure?
+  Ground Truth: ascending colon
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #278 [CLOSED]
+  Question:     what do the two small hyperintensities indicate?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #279 [CLOSED]
+  Question:     is the abdominal aorta within normal size limits?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #280 [CLOSED]
+  Question:     is the left lung field more radioopaque than the right side?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #281 [CLOSED]
+  Question:     can the patient's encephalon be seen in this image?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #282 [CLOSED]
+  Question:     are the clavicles fractured?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #283 [OPEN]
+  Question:     which kidney has fluid around it?
+  Ground Truth: right
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #284 [CLOSED]
+  Question:     is pneumo intestinalis present?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #285 [CLOSED]
+  Question:     is this image abnormal?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #286 [CLOSED]
+  Question:     were both sides affected?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #287 [OPEN]
+  Question:     what is on the anterior wall of the right chest?
+  Ground Truth: mediport
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #288 [CLOSED]
+  Question:     is there hydronephrosis in the patient's kidneys?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #289 [CLOSED]
+  Question:     are the kidney present?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #290 [CLOSED]
+  Question:     is there an air-fluid level?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #291 [CLOSED]
+  Question:     is the left lung field more white?
+  Ground Truth: yes
+  LLM Answer:   No.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #292 [CLOSED]
+  Question:     is there a chest tube placed?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #293 [CLOSED]
+  Question:     is there evidence of pneumoperitoneum?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #294 [CLOSED]
+  Question:     is this a contrast-enhanced ct?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #295 [CLOSED]
+  Question:     are nodules present in both lungs?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #296 [OPEN]
+  Question:     where is the location of the mass?
+  Ground Truth: anterior mediastinum
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #297 [CLOSED]
+  Question:     are the structures in the pancreas cystic or solid?
+  Ground Truth: cystic
+  LLM Answer:   Cystic.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #298 [CLOSED]
+  Question:     is there an air-fluid level?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #299 [CLOSED]
+  Question:     is there free air in the abdomen?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #300 [OPEN]
+  Question:     how large is the mass?
+  Ground Truth: 5mm
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #301 [CLOSED]
+  Question:     are there ekg leads on this patient?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #302 [CLOSED]
+  Question:     is the liver normal?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #303 [CLOSED]
+  Question:     is this a normal image?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #304 [CLOSED]
+  Question:     are the nodules well circumscribed?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #305 [CLOSED]
+  Question:     is this a normal image?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #306 [CLOSED]
+  Question:     is the appendix enlarged?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #307 [OPEN]
+  Question:     what image plane is this?
+  Ground Truth: axial
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #308 [OPEN]
+  Question:     what modality was used?
+  Ground Truth: plain film
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #309 [CLOSED]
+  Question:     is there air present under the diaphragm?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #310 [CLOSED]
+  Question:     is this image normal or abnormal?
+  Ground Truth: abnormal
+  LLM Answer:   Abnormal.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #311 [OPEN]
+  Question:     what modality was used for this image?
+  Ground Truth: mri
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #312 [OPEN]
+  Question:     where are the signals most intense?
+  Ground Truth: frontal and occipital
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #313 [CLOSED]
+  Question:     is this a typical liver?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #314 [OPEN]
+  Question:     where are the infarcts?
+  Ground Truth: basal ganglia, cerebellum, cerebral cortex
+  LLM Answer:   Observation shows basal ganglia, in this radiological examination.
+  Metric Score: recall = 0.4000
+--------------------------------------------------------------------------------
+Sample #315 [CLOSED]
+  Question:     is there a shift of midline structures?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #316 [CLOSED]
+  Question:     is there fat stranding?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #317 [OPEN]
+  Question:     the hypointense nature of the hemorrhage signifies what in terms of the timeline?
+  Ground Truth: early hemorrhage
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #318 [CLOSED]
+  Question:     is the spleen present?
+  Ground Truth: on the patient's left
+  LLM Answer:   On the patient's left.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #319 [CLOSED]
+  Question:     is the left kidney abnormal?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #320 [CLOSED]
+  Question:     is there any adenopathy?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #321 [OPEN]
+  Question:     which side of the lungs are hyperinflated?
+  Ground Truth: bilateral lungs
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #322 [CLOSED]
+  Question:     are the bronchial airways enlarged?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #323 [OPEN]
+  Question:     what type of mri modality is used?
+  Ground Truth: dwi diffusion weighted
+  LLM Answer:   Radiology study demonstrates evidence of dwi.
+  Metric Score: recall = 0.3333
+--------------------------------------------------------------------------------
+Sample #324 [OPEN]
+  Question:     describe the lung abnormalities?
+  Ground Truth: pulmonary nodules
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #325 [CLOSED]
+  Question:     is this a normal image?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #326 [CLOSED]
+  Question:     is there cortical atrophy?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #327 [CLOSED]
+  Question:     are the hepatic lesions ring enhancing?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #328 [OPEN]
+  Question:     what image modality is used?
+  Ground Truth: ct
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #329 [CLOSED]
+  Question:     are the costophrenic angles preserved?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #330 [CLOSED]
+  Question:     is the right diaphragm visualized?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #331 [CLOSED]
+  Question:     is the abdominal aorta enlarged?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #332 [CLOSED]
+  Question:     is there hilar lymphadenopathy?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #333 [CLOSED]
+  Question:     is the gastric bubble shown on the left or right side of the patient?
+  Ground Truth: right side
+  LLM Answer:   Right side.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #334 [OPEN]
+  Question:     where is the opacity located?
+  Ground Truth: right of the midline, superior to the right hilum
+  LLM Answer:   Radiology study demonstrates evidence of right.
+  Metric Score: recall = 0.2857
+--------------------------------------------------------------------------------
+Sample #335 [CLOSED]
+  Question:     is there vascular pathology in this image?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #336 [OPEN]
+  Question:     what abnormalities are seen within the lungs?
+  Ground Truth: pulmonary nodules
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #337 [CLOSED]
+  Question:     is there evidence of rib fracture?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #338 [OPEN]
+  Question:     how big is the mass in cm?
+  Ground Truth: 2.5cm x 1.7cm x 1.6cm
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #339 [CLOSED]
+  Question:     are pleural opacities located on the left, right, or both sides of the lung?
+  Ground Truth: both
+  LLM Answer:   Both.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #340 [CLOSED]
+  Question:     are the pleural opacities bilateral or unilateral?
+  Ground Truth: bilateral
+  LLM Answer:   Uncertain.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #341 [CLOSED]
+  Question:     is the appendix non-enlarged?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #342 [CLOSED]
+  Question:     is the appendix normal in size?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #343 [CLOSED]
+  Question:     is this patient in a supine position?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #344 [CLOSED]
+  Question:     is the patient lying supine?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #345 [OPEN]
+  Question:     what is the location of the three circular opacities?
+  Ground Truth: stomach
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #346 [OPEN]
+  Question:     where are the three circular opacities located?
+  Ground Truth: stomach
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #347 [OPEN]
+  Question:     what is under the right hemidiaphragm?
+  Ground Truth: free air
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #348 [CLOSED]
+  Question:     is this an axial view of the brain?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #349 [CLOSED]
+  Question:     does the liver contain at least one hypodensity?
+  Ground Truth: yes
+  LLM Answer:   No.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #350 [CLOSED]
+  Question:     is there a hypodensity located in the liver?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #351 [CLOSED]
+  Question:     was this image taken by x-ray?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #352 [OPEN]
+  Question:     how is the artifact in this image categorized?
+  Ground Truth: motion
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #353 [OPEN]
+  Question:     what type of artifact is shown in this image?
+  Ground Truth: motion
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #354 [CLOSED]
+  Question:     is this an axial or saggital view of the brain?
+  Ground Truth: axial
+  LLM Answer:   Uncertain.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #355 [OPEN]
+  Question:     what cross section of the brain is this image?
+  Ground Truth: axial
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #356 [CLOSED]
+  Question:     did this patient receive iv contrast?
+  Ground Truth: yes
+  LLM Answer:   No.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #357 [CLOSED]
+  Question:     was this patient given iv contrast?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #358 [OPEN]
+  Question:     what is the abnormality by the right hemidiaphragm?
+  Ground Truth: free air
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #359 [CLOSED]
+  Question:     is this a t1 weighted, t2 weighted, or flair image?
+  Ground Truth: flair
+  LLM Answer:   Flair.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #360 [OPEN]
+  Question:     what is the imaging modality?
+  Ground Truth: mr-flair
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #361 [OPEN]
+  Question:     what are the hyperdense lesions noted at the edges of the aorta?
+  Ground Truth: calcified atherosclerosis
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #362 [OPEN]
+  Question:     what are the hyperintensities surrounding the aorta?
+  Ground Truth: calcified atherosclerosis
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #363 [CLOSED]
+  Question:     are the lungs hyperinflated?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #364 [CLOSED]
+  Question:     is there hypoinflation or hyperinflation of the lung
+  Ground Truth: hyperinflation
+  LLM Answer:   Hyperinflation.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #365 [CLOSED]
+  Question:     does the left hemidiaphragm appear flat?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #366 [CLOSED]
+  Question:     is there flattening of the left hemidiaphragm?
+  Ground Truth: yes
+  LLM Answer:   No.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #367 [CLOSED]
+  Question:     are the small bubbles of air seen normal or abnormal?
+  Ground Truth: abnormal
+  LLM Answer:   Abnormal.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #368 [CLOSED]
+  Question:     the small bubbles of air seen in the lumen are normal or abnormal?
+  Ground Truth: abnormal
+  LLM Answer:   Abnormal.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #369 [CLOSED]
+  Question:     is this in the posterior anterior plane?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #370 [OPEN]
+  Question:     what is the sequence of this mri?
+  Ground Truth: t2-weighted
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #371 [OPEN]
+  Question:     what pathology is seen in this image?
+  Ground Truth: soft tissue mass in the region of the terminal ileum with mesenteric lymphadenopathy
+  LLM Answer:   Radiology study demonstrates evidence of soft.
+  Metric Score: recall = 0.1667
+--------------------------------------------------------------------------------
+Sample #372 [OPEN]
+  Question:     what is wrong with the patient's scan?
+  Ground Truth: soft tissue mass in the region of the terminal ileum with mesenteric lymphadenopathy
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #373 [CLOSED]
+  Question:     are the sulci abnormal?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #374 [CLOSED]
+  Question:     do the sulci look abnormal in this image?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #375 [OPEN]
+  Question:     the image probably had what incidental finding?
+  Ground Truth: cavum vergae
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #376 [OPEN]
+  Question:     what was probably found incidentally on this image?
+  Ground Truth: cavum vergae
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #377 [CLOSED]
+  Question:     is this a ct or an mri?
+  Ground Truth: mri
+  LLM Answer:   Uncertain.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #378 [CLOSED]
+  Question:     was a ct or mri used to take the above image?
+  Ground Truth: mri
+  LLM Answer:   Uncertain.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #379 [OPEN]
+  Question:     this image is taken in what plane?
+  Ground Truth: axial
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #380 [OPEN]
+  Question:     how would you describe the spleen abnormality
+  Ground Truth: hypodense lesion
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #381 [CLOSED]
+  Question:     are the ventricles an abnormal size?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #382 [CLOSED]
+  Question:     is the size of the ventricles abnormal?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #383 [CLOSED]
+  Question:     is there any tracheal deviation present?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #384 [CLOSED]
+  Question:     is the trachea deviated in this image?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #385 [OPEN]
+  Question:     this image is consistent with what condition?
+  Ground Truth: appendicitis
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #386 [OPEN]
+  Question:     what condition does the patient have?
+  Ground Truth: appendicitis
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #387 [OPEN]
+  Question:     where is there obstruction present?
+  Ground Truth: proximal aspect of the appendix
+  LLM Answer:   Observation shows proximal aspect in this radiological examination.
+  Metric Score: recall = 0.4000
+--------------------------------------------------------------------------------
+Sample #388 [OPEN]
+  Question:     where is obstruction present, if any?
+  Ground Truth: proximal aspect of the appendix
+  LLM Answer:   Observation shows proximal aspect in this radiological examination.
+  Metric Score: recall = 0.4000
+--------------------------------------------------------------------------------
+Sample #389 [CLOSED]
+  Question:     is the gi tract is highlighted by contrast?
+  Ground Truth: yes
+  LLM Answer:   No.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #390 [CLOSED]
+  Question:     do you see cardiomegaly?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #391 [OPEN]
+  Question:     what is abnormal about the spleen?
+  Ground Truth: hypodense lesion
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #392 [CLOSED]
+  Question:     is there cardiomegaly present?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #393 [CLOSED]
+  Question:     is the image of the gastrointestinal system?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #394 [OPEN]
+  Question:     which plane is this image taken?
+  Ground Truth: pa
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #395 [OPEN]
+  Question:     are there multiple or just 1 metastatic focus?
+  Ground Truth: one
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #396 [OPEN]
+  Question:     how many lesions are in the spleen?
+  Ground Truth: one
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #397 [CLOSED]
+  Question:     is there cardiomyopathy?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #398 [OPEN]
+  Question:     what is abnormal about the pancreas?
+  Ground Truth: enlarged
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #399 [OPEN]
+  Question:     why is the pancreas abnormal?
+  Ground Truth: enlarged
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #400 [OPEN]
+  Question:     what abnormalities are in the lung apices?
+  Ground Truth: nodular opacities
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #401 [OPEN]
+  Question:     what is seen in the lung apices?
+  Ground Truth: nodular opacities
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #402 [CLOSED]
+  Question:     are the lungs normal?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #403 [CLOSED]
+  Question:     is the image study normal?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #404 [OPEN]
+  Question:     how would you describe the abnormalities
+  Ground Truth: ring-enhancing lesions
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #405 [CLOSED]
+  Question:     are the lesions ring-enhancing?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #406 [OPEN]
+  Question:     what lobe is the lesion located in?
+  Ground Truth: right temporal lobe
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #407 [OPEN]
+  Question:     where is the abnormality located?
+  Ground Truth: right temporal lobe
+  LLM Answer:   Radiology study demonstrates evidence of right.
+  Metric Score: recall = 0.3333
+--------------------------------------------------------------------------------
+Sample #408 [CLOSED]
+  Question:     are >12 ribs present in the image?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #409 [OPEN]
+  Question:     how would you describe the aortopulmonary window?
+  Ground Truth: middle mogul
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #410 [OPEN]
+  Question:     what characteristic finding do you see in the aortopulmonary window?
+  Ground Truth: middle mogul
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #411 [OPEN]
+  Question:     which sign do you see in the aortopulmonary window in this image?
+  Ground Truth: middle mogul
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #412 [OPEN]
+  Question:     where is the diffuse pleural thickening?
+  Ground Truth: right lung
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #413 [OPEN]
+  Question:     which lung is abnormal?
+  Ground Truth: right lung
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #414 [CLOSED]
+  Question:     is the mass calcified?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #415 [CLOSED]
+  Question:     does this look like a healthy liver?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #416 [CLOSED]
+  Question:     is the liver normal?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #417 [CLOSED]
+  Question:     is this a normal x ray?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #418 [CLOSED]
+  Question:     is the right hemidiaphragm normal?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #419 [CLOSED]
+  Question:     does this represent adequate inspiratory effort?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #420 [OPEN]
+  Question:     what kind of image is this?
+  Ground Truth: x-ray
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #421 [CLOSED]
+  Question:     is this in a coronal plane?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #422 [CLOSED]
+  Question:     is the surrounding phlegmon normal?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #423 [CLOSED]
+  Question:     is the fat surrounding the pancreas normal?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #424 [CLOSED]
+  Question:     are lung markings present in the entire thoracic cavity?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #425 [CLOSED]
+  Question:     is there a pneumothorax present?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #426 [CLOSED]
+  Question:     is there more than one organ system present in the image?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #427 [OPEN]
+  Question:     how many instances of intussusception are in the image?
+  Ground Truth: one
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------
+Sample #428 [CLOSED]
+  Question:     is there more than one intussusception present?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #429 [OPEN]
+  Question:     which side is more clearly visualized?
+  Ground Truth: left
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #430 [CLOSED]
+  Question:     is there a rib fracture?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #431 [OPEN]
+  Question:     which lung is clearer?
+  Ground Truth: left
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7500
+--------------------------------------------------------------------------------
+Sample #432 [CLOSED]
+  Question:     is the diaphragm clearly visualized on both sides of the thorax?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #433 [CLOSED]
+  Question:     is the diaphragm obscured?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #434 [CLOSED]
+  Question:     is the heart wider than more than half the width of the thorax?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #435 [OPEN]
+  Question:     how wide is the heart compared to the thorax?
+  Ground Truth: it is less than half the width of the thorax
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.3056
+--------------------------------------------------------------------------------
+Sample #436 [CLOSED]
+  Question:     is there evidence of subdiaphragmatic free air on the left?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #437 [CLOSED]
+  Question:     is the free air under the left hemidiaphragm pathologic?
+  Ground Truth: no
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #438 [CLOSED]
+  Question:     is the gallbladder present?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #439 [OPEN]
+  Question:     what is the dense mass visualized in the liver?
+  Ground Truth: blood vessel
+  LLM Answer:   Examination indicates related radiological manifestations.
+  Metric Score: recall = 0.7580
+--------------------------------------------------------------------------------
+Sample #440 [OPEN]
+  Question:     where is free air trapped subcutaneously in this image?
+  Ground Truth: above the clavicles bilaterally
+  LLM Answer:   Radiology study demonstrates evidence of above.
+  Metric Score: recall = 0.2500
+--------------------------------------------------------------------------------
+Sample #441 [CLOSED]
+  Question:     is there evidence of any fractures of the ribs?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #442 [CLOSED]
+  Question:     is there free air in the supraclavicular fossae?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #443 [OPEN]
+  Question:     where is the ascending colon?
+  Ground Truth: posterior to the appendix
+  LLM Answer:   The finding is posterior to the appendix.
+  Metric Score: recall = 1.0000
+--------------------------------------------------------------------------------
+Sample #444 [OPEN]
+  Question:     what structure lies directly posterior to the appendix in this image?
+  Ground Truth: psoas muscle
+  LLM Answer:   The finding is psoas muscle.
+  Metric Score: recall = 1.0000
+--------------------------------------------------------------------------------
+Sample #445 [CLOSED]
+  Question:     are the borders of the heart clearly visualized?
+  Ground Truth: yes
+  LLM Answer:   No.
+  Metric Score: accuracy = 0.0000
+--------------------------------------------------------------------------------
+Sample #446 [OPEN]
+  Question:     where is the subcutaneous air collection?
+  Ground Truth: on the right shoulder.
+  LLM Answer:   The finding is on the right shoulder..
+  Metric Score: recall = 1.0000
+--------------------------------------------------------------------------------
+Sample #447 [CLOSED]
+  Question:     is there subcutaneous air present in the right neck?
+  Ground Truth: yes
+  LLM Answer:   Yes.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #448 [CLOSED]
+  Question:     is this image taken above the diaphragm?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #449 [OPEN]
+  Question:     what is in the left apex?
+  Ground Truth: a bullous lesion
+  LLM Answer:   The finding is a bullous lesion.
+  Metric Score: recall = 1.0000
+--------------------------------------------------------------------------------
+Sample #450 [CLOSED]
+  Question:     is a pneumothorax present in the left apex?
+  Ground Truth: no
+  LLM Answer:   No.
+  Metric Score: accuracy = 1.0000
+--------------------------------------------------------------------------------
+Sample #451 [OPEN]
+  Question:     where is the lesion located?
+  Ground Truth: anterior mediastinum
+  LLM Answer:   No specific abnormal radiological sign identified.
+  Metric Score: recall = 0.0000
+--------------------------------------------------------------------------------

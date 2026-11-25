@@ -1,0 +1,36 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Large datasets & models (datasets are automatically fetched from HuggingFace HLDKNotFound/llada-medv-vqa)
+staging_llada_medv_vqa/
+models/
+*.parquet
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Environment & secrets
+.env
+.env.*
+
+# IDE & agent internal artifacts
+.agents/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary & checkpoint files
+scratch/
+tmp/

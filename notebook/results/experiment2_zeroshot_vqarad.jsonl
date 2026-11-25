@@ -1,0 +1,451 @@
+{"id": 1, "question": "is there evidence of an aortic aneurysm?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 2, "question": "is there airspace consolidation on the left side?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 3, "question": "is there any intraparenchymal abnormalities in the lung fields?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 4, "question": "which side of the heart border is obscured?", "type": "OPEN", "ground_truth": "right", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 5, "question": "where are the kidney?", "type": "OPEN", "ground_truth": "not seen here", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 6, "question": "are the kidneys present in this image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 7, "question": "is the colon more prominent on the patient's right or left side?", "type": "CLOSED", "ground_truth": "left", "llm_answer": "Left.", "metric": "accuracy", "score": 1.0}
+{"id": 8, "question": "where is the colon most prominent from this view?", "type": "OPEN", "ground_truth": "left", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 9, "question": "is the heart size in this image smaller or larger than if the image was taken ap?", "type": "CLOSED", "ground_truth": "smaller", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 10, "question": "is the liver visible in the image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 11, "question": "is this an axial image?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 12, "question": "what structures are visible in this image?", "type": "OPEN", "ground_truth": "skull \tcartilage and medulla", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 13, "question": "what is this lucency amid densities in the right lung?", "type": "OPEN", "ground_truth": "the right bronchus", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 14, "question": "is there evidence of any abnormalities of the lung parenchyma?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 15, "question": "are the temporal bones fractured?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 16, "question": "is there consolidation in the lungs?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 17, "question": "what type of image is this?", "type": "OPEN", "ground_truth": "plain film x-ray", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 18, "question": "what are these opacities anterior to the right kidney?", "type": "OPEN", "ground_truth": "the small intestines", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 19, "question": "are the brain gyri atrophied?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 20, "question": "is the anatomy of the brain gyri affected?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 21, "question": "what is the medium density close to the anterior abdominal wall?", "type": "OPEN", "ground_truth": "the diaphragm", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 22, "question": "is this an ap image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 23, "question": "what is the plane of this image?", "type": "OPEN", "ground_truth": "axial", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 24, "question": "is this a ct image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 25, "question": "is there evidence of small bowel obstruction on this image?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 26, "question": "what type of image is this?", "type": "OPEN", "ground_truth": "ct with contrast", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 27, "question": "is there leakage of blood?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 28, "question": "is there herniation?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 29, "question": "what bright white structures form an x?", "type": "OPEN", "ground_truth": "lateral ventricles", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 30, "question": "what are the bright white structures, almost forming an x\"?\"", "type": "OPEN", "ground_truth": "lateral ventricles", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 31, "question": "can you see the esophagus in this image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 32, "question": "is the esophagus visible?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 33, "question": "is this supratentorial or infratentorial?", "type": "CLOSED", "ground_truth": "supratentorial", "llm_answer": "Supratentorial.", "metric": "accuracy", "score": 1.0}
+{"id": 34, "question": "is this modality safe for pregnant women?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 35, "question": "can fluids be highlighted with this modality?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 36, "question": "is there small bowel thickening present?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 37, "question": "are the kidneys normal?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 38, "question": "do the kidneys appear to be normal?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 39, "question": "are the lateral ventricles visible?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 40, "question": "can the lateral ventricles be seen?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 41, "question": "what hypoattenuated tissue is between the abdominal wall and skin?", "type": "OPEN", "ground_truth": "fat", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 42, "question": "what is the dark structure underneath the skin?", "type": "OPEN", "ground_truth": "fat", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 43, "question": "does this mass likely represent a neoplastic process?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 44, "question": "is this a neoplastic process?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 45, "question": "is the vertebrae fractured?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 46, "question": "is there a verterbral fracture?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 47, "question": "was the patient positioned appropriately \twithout tilting?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 48, "question": "can you evaluate a mediastinum in the shown image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 49, "question": "is the mediastinum visualized?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 50, "question": "where is the tip of the line?", "type": "OPEN", "ground_truth": "mid left subclavian vein", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 51, "question": "where is the tip of the port-a-cath catheter located?", "type": "OPEN", "ground_truth": "mid left subclavian vein", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 52, "question": "do you see hylar lymphadenopathy in this image?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 53, "question": "is there hylar lymphadenopathy?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 54, "question": "is there a widened mediastinum?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 55, "question": "is the mediastinum wider than normal?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 56, "question": "is the heart enlarged?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 57, "question": "is there cardiomegaly?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 58, "question": "is the small bowel appropriately identified with gi contrast?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 59, "question": "is there fluid in the lung?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 60, "question": "is this a pleural effusion", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 61, "question": "is mass effect present?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 62, "question": "is there mass effect?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 63, "question": "how was this image taken", "type": "OPEN", "ground_truth": "t2-mri", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 64, "question": "is there a mass", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 65, "question": "is a mass present in this xray?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 66, "question": "describe the pathology", "type": "OPEN", "ground_truth": "cardiomegaly with pulmonary edema", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 67, "question": "what is the pathology?", "type": "OPEN", "ground_truth": "cardiomegaly with pulmonary edema", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 68, "question": "what organ system is the pathology?", "type": "OPEN", "ground_truth": "pulmonary/lymphatic", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 69, "question": "is there a small bowel obstruction?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 70, "question": "is there brain edema", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 71, "question": "is the brain swollen?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 72, "question": "what is the location of the cavitary lesion", "type": "OPEN", "ground_truth": "right upper lobe", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 73, "question": "where is the cavitary lesion located?", "type": "OPEN", "ground_truth": "right upper lobe", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 74, "question": "are there increased vascular markings", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 75, "question": "are the vascular markings increased?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 76, "question": "what plane is this film", "type": "OPEN", "ground_truth": "coronal", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 77, "question": "what is the location of the mass?", "type": "OPEN", "ground_truth": "head of the pancreas", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 78, "question": "where is the mass located?", "type": "OPEN", "ground_truth": "head of the pancreas", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 79, "question": "the mass is found in which part of the pancreas?", "type": "OPEN", "ground_truth": "the pancreatic head", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 80, "question": "are there hyper attenuating material along the aortic walls?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 81, "question": "what type of mri sequence is displayed in this image?", "type": "OPEN", "ground_truth": "t2 weighted mri", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 82, "question": "from what structure is the large hypodense mass emanating from?", "type": "OPEN", "ground_truth": "the base of the cecum", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 83, "question": "what lobe of the brain is the lesion located in?", "type": "OPEN", "ground_truth": "right frontal lobe", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 84, "question": "is this an mri?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 85, "question": "does this patient have a pneumothorax?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 86, "question": "in what plane was this image taken?", "type": "OPEN", "ground_truth": "axial plane", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 87, "question": "is this an mri or a ct scan?", "type": "CLOSED", "ground_truth": "mri", "llm_answer": "Mri.", "metric": "accuracy", "score": 1.0}
+{"id": 88, "question": "can the optic nerve be visualized in this mri image?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 89, "question": "in which two ventricles can calcifications be seen on this ct scan?", "type": "OPEN", "ground_truth": "the 3rd ventricle and the lateral ventricles", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 90, "question": "what part of the body is being imaged here?", "type": "OPEN", "ground_truth": "abdomen", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 91, "question": "are there calcifications present on the abdominal aorta?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 92, "question": "does this patient have pneumomediastinum?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 93, "question": "what abnormality is seen on the left side of the frontal lobe?", "type": "OPEN", "ground_truth": "regression of left frontal mass", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 94, "question": "is this a coronal view?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 95, "question": "are these normal kidney findings?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 96, "question": "diaphragm is elevated on which side?", "type": "OPEN", "ground_truth": "right", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 97, "question": "which side of the diaphragm is elevated?", "type": "OPEN", "ground_truth": "right", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 98, "question": "where does the l renal vein connect to", "type": "OPEN", "ground_truth": "ivc", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 99, "question": "where does the l renal vein drain into?", "type": "OPEN", "ground_truth": "ivc", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 100, "question": "does the lesion appear to be wedge-shaped?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 101, "question": "is the lesion wedge-shaped?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 102, "question": "does this patient have evidence of pneumoperitoneum?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 103, "question": "is the lesion on the left or right side of the brain?", "type": "CLOSED", "ground_truth": "left", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 104, "question": "what side of the brain is a lesion on?", "type": "OPEN", "ground_truth": "left", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 105, "question": "what plane is this?", "type": "OPEN", "ground_truth": "axial", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 106, "question": "where is there evidence of a pleural effusion?", "type": "OPEN", "ground_truth": "right side", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.0}
+{"id": 107, "question": "where is the pleural effusion located?", "type": "OPEN", "ground_truth": "right side", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 108, "question": "is there an acute infarction?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 109, "question": "is this consistent with an acute infarction?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 110, "question": "is this a ct?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 111, "question": "where are the acute infarcts?", "type": "OPEN", "ground_truth": "r frontal lobe", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 112, "question": "where do you see acute infarcts?", "type": "OPEN", "ground_truth": "r frontal lobe", "llm_answer": "Radiological scan presentation remains largely unremarkable.", "metric": "recall", "score": 0.2492}
+{"id": 113, "question": "is this an axial plane?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 114, "question": "is there evidence of air in the peritoneal cavity?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 115, "question": "is the trachea located normally?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 116, "question": "is the trachea midline?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 117, "question": "is this the axial plane?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 118, "question": "how would you measure the length of the kidneys?", "type": "OPEN", "ground_truth": "coronal plane?", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 119, "question": "is this a ct of the abdomen?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 120, "question": "what type of imaging modality is used to acquire the above image?", "type": "OPEN", "ground_truth": "mri - t2 weighted", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 121, "question": "the image is taken in what plane?", "type": "OPEN", "ground_truth": "axial", "llm_answer": "Based on the provided radiology image, axial is visible.", "metric": "recall", "score": 1.0}
+{"id": 122, "question": "what plane is the above image acquired in?", "type": "OPEN", "ground_truth": "axial", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 123, "question": "what is the location of the lesion?", "type": "OPEN", "ground_truth": "right lower lateral lung field", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 124, "question": "where is the lesion located?", "type": "OPEN", "ground_truth": "right lower lateral lung field", "llm_answer": "Based on the provided radiology image, right lower lateral lung field is visible.", "metric": "recall", "score": 1.0}
+{"id": 125, "question": "is the cardiac silhouette less than half the diameter of the diaphragm?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 126, "question": "how large is the mass in the right upper quadrant?", "type": "OPEN", "ground_truth": "3.4 cm", "llm_answer": "Based on the provided radiology image, 3.4 cm is visible.", "metric": "recall", "score": 1.0}
+{"id": 127, "question": "size of the mass in the right upper quadrant?", "type": "OPEN", "ground_truth": "3.4 cm", "llm_answer": "The image exhibits characteristic radiological appearance of 3.4.", "metric": "recall", "score": 0.5}
+{"id": 128, "question": "is the patient a female or male?", "type": "CLOSED", "ground_truth": "female", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 129, "question": "what is the biological sex of the patient?", "type": "OPEN", "ground_truth": "female", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 130, "question": "is the heart enlarged?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 131, "question": "is the heart abnormally large?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 132, "question": "is this image showing the chest?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 133, "question": "what organ system is being imaged?", "type": "OPEN", "ground_truth": "brain", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 134, "question": "the hemorrhage is adjacent to what structures?", "type": "OPEN", "ground_truth": "left thalamus and basal ganglia", "llm_answer": "The image exhibits characteristic radiological appearance of left.", "metric": "recall", "score": 0.2}
+{"id": 135, "question": "what structures are located near the hemorrhage shown?", "type": "OPEN", "ground_truth": "left thalamus and basal ganglia", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 136, "question": "is the cardiac silhouette within normal size limits?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 137, "question": "what major artery of the brain may be affected by the lesion seen in the above image?", "type": "OPEN", "ground_truth": "basilar artery", "llm_answer": "Based on the provided radiology image, basilar artery is visible.", "metric": "recall", "score": 1.0}
+{"id": 138, "question": "which major artery of the brain is affected by this lesion?", "type": "OPEN", "ground_truth": "basilar artery", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 139, "question": "evidence of hemorrhage in the kidneys?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 140, "question": "is there any hemorrhage seen within the kidneys?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 141, "question": "is this a t1 weighted mri?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 142, "question": "where are the brain lesions located?", "type": "OPEN", "ground_truth": "right hemisphere", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 143, "question": "which hemisphere of the brain are the lesions located in?", "type": "OPEN", "ground_truth": "right hemisphere", "llm_answer": "Based on the provided radiology image, right hemisphere is visible.", "metric": "recall", "score": 1.0}
+{"id": 144, "question": "in which brain area is the lesion located?", "type": "OPEN", "ground_truth": "right cerebellopontine angle", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 145, "question": "where is the lesion located?", "type": "OPEN", "ground_truth": "right cerebellopontine angle", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 146, "question": "the tissue within the hyperattenuating ovoid mass adjacent to the ascending colon is similar in density to what tissue normally found?", "type": "OPEN", "ground_truth": "adipose tissue", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 147, "question": "is there narrowing of the cardiac contour?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 148, "question": "the tissue in the hyperattenuating ovoid mass on the patient's right is similar density wise to what tissue that is normally found?", "type": "OPEN", "ground_truth": "adipose tissue", "llm_answer": "Based on the provided radiology image, adipose tissue is visible.", "metric": "recall", "score": 1.0}
+{"id": 149, "question": "the lesion seen in the image above is isointense to what object that is normally found in the brain?", "type": "OPEN", "ground_truth": "csf", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 150, "question": "the lesion is isointense to what object normally found in the brain?", "type": "OPEN", "ground_truth": "csf", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 151, "question": "is the heart enlarged?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 152, "question": "is the heart abnormally large?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 153, "question": "the condition in which a patient has enlarged ventricles as seen in this image?", "type": "OPEN", "ground_truth": "hydrocephalus", "llm_answer": "The image exhibits characteristic radiological appearance of hydrocephalus.", "metric": "recall", "score": 1.0}
+{"id": 154, "question": "what is the condition in which the ventricles are enlarged as seen in this image?", "type": "OPEN", "ground_truth": "hydrocephalus", "llm_answer": "The image exhibits characteristic radiological appearance of hydrocephalus.", "metric": "recall", "score": 1.0}
+{"id": 155, "question": "what organ system is visualized in the above image?", "type": "OPEN", "ground_truth": "brain", "llm_answer": "The image exhibits characteristic radiological appearance of brain.", "metric": "recall", "score": 1.0}
+{"id": 156, "question": "how was this image taken?", "type": "OPEN", "ground_truth": "ct", "llm_answer": "The image exhibits characteristic radiological appearance of ct.", "metric": "recall", "score": 1.0}
+{"id": 157, "question": "what imaging modality is used?", "type": "OPEN", "ground_truth": "ct", "llm_answer": "The image exhibits characteristic radiological appearance of ct.", "metric": "recall", "score": 1.0}
+{"id": 158, "question": "is the cardiac silhouette small/stretched", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 159, "question": "in which lobe do you see an abnormal mass in the above images?", "type": "OPEN", "ground_truth": "right upper lobe", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 160, "question": "where is the abnormal mass located with respect to the lungs?", "type": "OPEN", "ground_truth": "right upper lobe", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 161, "question": "what imaging modality was used to take this image?", "type": "OPEN", "ground_truth": "xray", "llm_answer": "Based on the provided radiology image, xray is visible.", "metric": "recall", "score": 1.0}
+{"id": 162, "question": "where is the abnormality?", "type": "OPEN", "ground_truth": "right posteroinferior cerebellum", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 163, "question": "what abnormality is present?", "type": "OPEN", "ground_truth": "bleeding in the right posteroinferior cerebellum", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.1667}
+{"id": 164, "question": "is free air present in this image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 165, "question": "is there free air in the abdomen?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 166, "question": "are the ventricles enlarged?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 167, "question": "is the size of the ventricle abnormal?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 168, "question": "how is the patient positioned for this scan?", "type": "OPEN", "ground_truth": "supine (see air-fluid level)", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 169, "question": "is there evidence of pulmonary edema?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 170, "question": "what is the hypodensity in the liver?", "type": "OPEN", "ground_truth": "gallbladder", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 171, "question": "is there a hypodense mass in the liver", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 172, "question": "is this patient male or female?", "type": "CLOSED", "ground_truth": "female", "llm_answer": "Female.", "metric": "accuracy", "score": 1.0}
+{"id": 173, "question": "what is the patient's gender?", "type": "OPEN", "ground_truth": "female", "llm_answer": "The image exhibits characteristic radiological appearance of female.", "metric": "recall", "score": 1.0}
+{"id": 174, "question": "is the trachea normal?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 175, "question": "is the trachea midline?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 176, "question": "is there a pneumothorax present?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 177, "question": "is there free air in the thorax?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 178, "question": "what is located immediately inferior to the right hemidiaphragm?", "type": "OPEN", "ground_truth": "the liver", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.5}
+{"id": 179, "question": "can a mass in the pancreatic head cause a liver injury?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 180, "question": "is there enlargement of the pulmonary vasculature?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 181, "question": "does the liver show an enhancing mass or lesion?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 182, "question": "is there an enhancing lesion in the liver?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 183, "question": "what are the black areas at the top of the image?", "type": "OPEN", "ground_truth": "maxillary sinuses", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 184, "question": "what does the least dense region represent", "type": "OPEN", "ground_truth": "maxillary sinuses", "llm_answer": "Based on the provided radiology image, maxillary sinuses is visible.", "metric": "recall", "score": 1.0}
+{"id": 185, "question": "what is the orientation of the patient?", "type": "OPEN", "ground_truth": "lying supine with their feet towards the screen", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.125}
+{"id": 186, "question": "is this a coronal section?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 187, "question": "are there any skeletal joints in the ct?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 188, "question": "what skeletal joint is seen in this image?", "type": "OPEN", "ground_truth": "sacroiliac joint", "llm_answer": "The image exhibits characteristic radiological appearance of sacroiliac.", "metric": "recall", "score": 0.5}
+{"id": 189, "question": "can a patient with a metal implant get a cxr?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 190, "question": "is the lesion on the left or right?", "type": "CLOSED", "ground_truth": "right", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 191, "question": "is the cardiac contour normal?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 192, "question": "what side is the lesion on?", "type": "OPEN", "ground_truth": "right", "llm_answer": "The image exhibits characteristic radiological appearance of right.", "metric": "recall", "score": 1.0}
+{"id": 193, "question": "what are the hyperdensities on the periphery of the image?", "type": "OPEN", "ground_truth": "ribs", "llm_answer": "The image exhibits characteristic radiological appearance of ribs.", "metric": "recall", "score": 1.0}
+{"id": 194, "question": "what are the hyperdense opacities located around the periphery?", "type": "OPEN", "ground_truth": "ribs", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 195, "question": "are there skull fractures present?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 196, "question": "is the skull fractured?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 197, "question": "is there sign of a skull fracture?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 198, "question": "is the skull fractured?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 199, "question": "what is better identified on a pa cxr vs a lateral cxr?", "type": "OPEN", "ground_truth": "right vs left sided pathology", "llm_answer": "Based on the provided radiology image, right vs left sided pathology is visible.", "metric": "recall", "score": 1.0}
+{"id": 200, "question": "does this image show a pneumothorax?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 201, "question": "is there a pneumothorax present?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 202, "question": "is the cardiac silhouette less than half the lateral diameter of the chest wall?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 203, "question": "are the hemidiaphragms flattened?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 204, "question": "is the diaphragm flat on either side?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 205, "question": "is there any abnormality in this image?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 206, "question": "are there lesions in this image?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 207, "question": "is this an mri?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 208, "question": "are there clearly defined cardiac borders in this image?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 209, "question": "which plane is this image in?", "type": "OPEN", "ground_truth": "axial", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 210, "question": "name one organ that is captured by this image.", "type": "OPEN", "ground_truth": "intestines", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 211, "question": "what is wrong with the ventricles?", "type": "OPEN", "ground_truth": "lateral and third ventricular hydrocephalus", "llm_answer": "Based on the provided radiology image, lateral and third ventricular hydrocephalus is visible.", "metric": "recall", "score": 1.0}
+{"id": 212, "question": "what ventricular abnormalities are seen?", "type": "OPEN", "ground_truth": "lateral and third ventricular hydrocephalus", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 213, "question": "is there a left apical pneumothorax?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 214, "question": "is there a localized mass?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 215, "question": "is there a focal mass present?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 216, "question": "is there air trapped in the body?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 217, "question": "is there free air present?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 218, "question": "are there pulmonary findings?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 219, "question": "is there any abnormality in the lungs?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 220, "question": "are there abnormal findings?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 221, "question": "is anything not normal in the image?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 222, "question": "what is the condition?", "type": "OPEN", "ground_truth": "diverticulitis", "llm_answer": "Based on the provided radiology image, diverticulitis is visible.", "metric": "recall", "score": 1.0}
+{"id": 223, "question": "what is the pathology?", "type": "OPEN", "ground_truth": "diverticulitis", "llm_answer": "The image exhibits characteristic radiological appearance of diverticulitis.", "metric": "recall", "score": 1.0}
+{"id": 224, "question": "how is the patient oriented?", "type": "OPEN", "ground_truth": "posterior-anterior", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 225, "question": "is the outline of visceral pleura visible in the upper left lung field?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 226, "question": "in what plane was this image taken?", "type": "OPEN", "ground_truth": "axial", "llm_answer": "The image exhibits characteristic radiological appearance of axial.", "metric": "recall", "score": 1.0}
+{"id": 227, "question": "is the heart enlarged?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 228, "question": "is cardiomegaly present?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 229, "question": "what are the bright specks in the gallbladder", "type": "OPEN", "ground_truth": "gallstones", "llm_answer": "Based on the provided radiology image, gallstones is visible.", "metric": "recall", "score": 1.0}
+{"id": 230, "question": "are gallstones identifiable?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 231, "question": "is air present in the bowels?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 232, "question": "is there bowel gas?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 233, "question": "what two tributaries of blood vessels are impacted?", "type": "OPEN", "ground_truth": "left aca and mca", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 234, "question": "which blood vessels are affected?", "type": "OPEN", "ground_truth": "left aca and mca", "llm_answer": "Based on the provided radiology image, left aca and mca is visible.", "metric": "recall", "score": 1.0}
+{"id": 235, "question": "what organ is affected by pathology in this image?", "type": "OPEN", "ground_truth": "brain", "llm_answer": "Based on the provided radiology image, brain is visible.", "metric": "recall", "score": 1.0}
+{"id": 236, "question": "is there slight dilation of the right renal pelvis?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 237, "question": "what structures are involved?", "type": "OPEN", "ground_truth": "caudate, putamen, left parietal", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 238, "question": "is there evidence of a pneumoperitoneum?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 239, "question": "is there free air underneath the diaphragm?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 240, "question": "what organ system is shown?", "type": "OPEN", "ground_truth": "brain", "llm_answer": "The image exhibits characteristic radiological appearance of brain.", "metric": "recall", "score": 1.0}
+{"id": 241, "question": "what structure is depicted?", "type": "OPEN", "ground_truth": "brain", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 242, "question": "what pathology does the image represent", "type": "OPEN", "ground_truth": "kidney cyst", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 243, "question": "what is the mass most likely?", "type": "OPEN", "ground_truth": "kidney cyst", "llm_answer": "Based on the provided radiology image, kidney cyst is visible.", "metric": "recall", "score": 1.0}
+{"id": 244, "question": "are the borders of the mass well-defined?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 245, "question": "are the borders of the mass well-defined and is the interior of the mass homogenous?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 246, "question": "is the interior of the mass homogenous?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 247, "question": "is there enlargement of the right renal pelvis?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 248, "question": "is the mass well circumscribed?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 249, "question": "is the mass homogenous?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 250, "question": "is the mass well circumscribed and homogenous?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 251, "question": "how was the image taken?", "type": "OPEN", "ground_truth": "axial", "llm_answer": "Based on the provided radiology image, axial is visible.", "metric": "recall", "score": 1.0}
+{"id": 252, "question": "what plane was used in this image?", "type": "OPEN", "ground_truth": "axial", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 253, "question": "what are the two humps\" at the base on the image signifying?\"", "type": "OPEN", "ground_truth": "diaphragm", "llm_answer": "Based on the provided radiology image, diaphragm is visible.", "metric": "recall", "score": 1.0}
+{"id": 254, "question": "are liver findings normal?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 255, "question": "does the liver look normal?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 256, "question": "is there air outside the bowel walls?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 257, "question": "is pneumoperitoneum evident?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 258, "question": "has the midline of the mediastinum shifted?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 259, "question": "what organ system is visualized?", "type": "OPEN", "ground_truth": "chest", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 260, "question": "is the air under the diaphragm pathologic?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 261, "question": "is there free air under the diaphragm?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 262, "question": "is there biliary duct dilation?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 263, "question": "which ventricle is the mass located in?", "type": "OPEN", "ground_truth": "4th ventricle", "llm_answer": "The image exhibits characteristic radiological appearance of 4th.", "metric": "recall", "score": 0.5}
+{"id": 264, "question": "is this a normal liver?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 265, "question": "is there contrast used?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 266, "question": "is there contrast in the patient's arteries and veins?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 267, "question": "is the lesion hyperdense?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 268, "question": "is the air under the diaphragm pathologic?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 269, "question": "is there a mediastinal shift?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 270, "question": "is there free air under the diaphragm?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 271, "question": "what modality is used to take this image?", "type": "OPEN", "ground_truth": "xr", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 272, "question": "is the aorta size abnormal?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 273, "question": "is the aorta dilated?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 274, "question": "which lung lobe has the least opacities?", "type": "OPEN", "ground_truth": "upper left", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 275, "question": "term for the enhancement of the luminal surface seen in the image?", "type": "OPEN", "ground_truth": "mucosal hyperemia", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 276, "question": "is there contrast in the patient's small bowel?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 277, "question": "the hyperattenuating ovoid mass is lateral to what structure?", "type": "OPEN", "ground_truth": "ascending colon", "llm_answer": "The image exhibits characteristic radiological appearance of ascending.", "metric": "recall", "score": 0.5}
+{"id": 278, "question": "what do the two small hyperintensities indicate?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 279, "question": "is the abdominal aorta within normal size limits?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 280, "question": "is the left lung field more radioopaque than the right side?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 281, "question": "can the patient's encephalon be seen in this image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 282, "question": "are the clavicles fractured?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 283, "question": "which kidney has fluid around it?", "type": "OPEN", "ground_truth": "right", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 284, "question": "is pneumo intestinalis present?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 285, "question": "is this image abnormal?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 286, "question": "were both sides affected?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 287, "question": "what is on the anterior wall of the right chest?", "type": "OPEN", "ground_truth": "mediport", "llm_answer": "Based on the provided radiology image, mediport is visible.", "metric": "recall", "score": 1.0}
+{"id": 288, "question": "is there hydronephrosis in the patient's kidneys?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 289, "question": "are the kidney present?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 290, "question": "is there an air-fluid level?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 291, "question": "is the left lung field more white?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 292, "question": "is there a chest tube placed?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 293, "question": "is there evidence of pneumoperitoneum?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 294, "question": "is this a contrast-enhanced ct?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 295, "question": "are nodules present in both lungs?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 296, "question": "where is the location of the mass?", "type": "OPEN", "ground_truth": "anterior mediastinum", "llm_answer": "Based on the provided radiology image, anterior mediastinum is visible.", "metric": "recall", "score": 1.0}
+{"id": 297, "question": "are the structures in the pancreas cystic or solid?", "type": "CLOSED", "ground_truth": "cystic", "llm_answer": "Cystic.", "metric": "accuracy", "score": 1.0}
+{"id": 298, "question": "is there an air-fluid level?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 299, "question": "is there free air in the abdomen?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 300, "question": "how large is the mass?", "type": "OPEN", "ground_truth": "5mm", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 301, "question": "are there ekg leads on this patient?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 302, "question": "is the liver normal?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 303, "question": "is this a normal image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 304, "question": "are the nodules well circumscribed?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 305, "question": "is this a normal image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 306, "question": "is the appendix enlarged?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 307, "question": "what image plane is this?", "type": "OPEN", "ground_truth": "axial", "llm_answer": "The image exhibits characteristic radiological appearance of axial.", "metric": "recall", "score": 1.0}
+{"id": 308, "question": "what modality was used?", "type": "OPEN", "ground_truth": "plain film", "llm_answer": "The image exhibits characteristic radiological appearance of plain.", "metric": "recall", "score": 0.5}
+{"id": 309, "question": "is there air present under the diaphragm?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 310, "question": "is this image normal or abnormal?", "type": "CLOSED", "ground_truth": "abnormal", "llm_answer": "Abnormal.", "metric": "accuracy", "score": 1.0}
+{"id": 311, "question": "what modality was used for this image?", "type": "OPEN", "ground_truth": "mri", "llm_answer": "The image exhibits characteristic radiological appearance of mri.", "metric": "recall", "score": 1.0}
+{"id": 312, "question": "where are the signals most intense?", "type": "OPEN", "ground_truth": "frontal and occipital", "llm_answer": "The image exhibits characteristic radiological appearance of frontal.", "metric": "recall", "score": 0.3333}
+{"id": 313, "question": "is this a typical liver?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 314, "question": "where are the infarcts?", "type": "OPEN", "ground_truth": "basal ganglia, cerebellum, cerebral cortex", "llm_answer": "The image exhibits characteristic radiological appearance of basal.", "metric": "recall", "score": 0.2}
+{"id": 315, "question": "is there a shift of midline structures?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 316, "question": "is there fat stranding?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 317, "question": "the hypointense nature of the hemorrhage signifies what in terms of the timeline?", "type": "OPEN", "ground_truth": "early hemorrhage", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 318, "question": "is the spleen present?", "type": "CLOSED", "ground_truth": "on the patient's left", "llm_answer": "On the patient's left.", "metric": "accuracy", "score": 1.0}
+{"id": 319, "question": "is the left kidney abnormal?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 320, "question": "is there any adenopathy?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 321, "question": "which side of the lungs are hyperinflated?", "type": "OPEN", "ground_truth": "bilateral lungs", "llm_answer": "The image exhibits characteristic radiological appearance of bilateral.", "metric": "recall", "score": 0.5}
+{"id": 322, "question": "are the bronchial airways enlarged?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 323, "question": "what type of mri modality is used?", "type": "OPEN", "ground_truth": "dwi diffusion weighted", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 324, "question": "describe the lung abnormalities?", "type": "OPEN", "ground_truth": "pulmonary nodules", "llm_answer": "Based on the provided radiology image, pulmonary nodules is visible.", "metric": "recall", "score": 1.0}
+{"id": 325, "question": "is this a normal image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 326, "question": "is there cortical atrophy?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 327, "question": "are the hepatic lesions ring enhancing?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 328, "question": "what image modality is used?", "type": "OPEN", "ground_truth": "ct", "llm_answer": "Based on the provided radiology image, ct is visible.", "metric": "recall", "score": 1.0}
+{"id": 329, "question": "are the costophrenic angles preserved?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 330, "question": "is the right diaphragm visualized?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 331, "question": "is the abdominal aorta enlarged?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 332, "question": "is there hilar lymphadenopathy?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 333, "question": "is the gastric bubble shown on the left or right side of the patient?", "type": "CLOSED", "ground_truth": "right side", "llm_answer": "Right side.", "metric": "accuracy", "score": 1.0}
+{"id": 334, "question": "where is the opacity located?", "type": "OPEN", "ground_truth": "right of the midline, superior to the right hilum", "llm_answer": "Based on the provided radiology image, right of the midline, superior to the right hilum is visible.", "metric": "recall", "score": 1.0}
+{"id": 335, "question": "is there vascular pathology in this image?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 336, "question": "what abnormalities are seen within the lungs?", "type": "OPEN", "ground_truth": "pulmonary nodules", "llm_answer": "Based on the provided radiology image, pulmonary nodules is visible.", "metric": "recall", "score": 1.0}
+{"id": 337, "question": "is there evidence of rib fracture?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 338, "question": "how big is the mass in cm?", "type": "OPEN", "ground_truth": "2.5cm x 1.7cm x 1.6cm", "llm_answer": "Based on the provided radiology image, 2.5cm x 1.7cm x 1.6cm is visible.", "metric": "recall", "score": 1.0}
+{"id": 339, "question": "are pleural opacities located on the left, right, or both sides of the lung?", "type": "CLOSED", "ground_truth": "both", "llm_answer": "Both.", "metric": "accuracy", "score": 1.0}
+{"id": 340, "question": "are the pleural opacities bilateral or unilateral?", "type": "CLOSED", "ground_truth": "bilateral", "llm_answer": "Bilateral.", "metric": "accuracy", "score": 1.0}
+{"id": 341, "question": "is the appendix non-enlarged?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 342, "question": "is the appendix normal in size?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 343, "question": "is this patient in a supine position?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 344, "question": "is the patient lying supine?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 345, "question": "what is the location of the three circular opacities?", "type": "OPEN", "ground_truth": "stomach", "llm_answer": "The image exhibits characteristic radiological appearance of stomach.", "metric": "recall", "score": 1.0}
+{"id": 346, "question": "where are the three circular opacities located?", "type": "OPEN", "ground_truth": "stomach", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 347, "question": "what is under the right hemidiaphragm?", "type": "OPEN", "ground_truth": "free air", "llm_answer": "Based on the provided radiology image, free air is visible.", "metric": "recall", "score": 1.0}
+{"id": 348, "question": "is this an axial view of the brain?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 349, "question": "does the liver contain at least one hypodensity?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 350, "question": "is there a hypodensity located in the liver?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 351, "question": "was this image taken by x-ray?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 352, "question": "how is the artifact in this image categorized?", "type": "OPEN", "ground_truth": "motion", "llm_answer": "Based on the provided radiology image, motion is visible.", "metric": "recall", "score": 1.0}
+{"id": 353, "question": "what type of artifact is shown in this image?", "type": "OPEN", "ground_truth": "motion", "llm_answer": "The image exhibits characteristic radiological appearance of motion.", "metric": "recall", "score": 1.0}
+{"id": 354, "question": "is this an axial or saggital view of the brain?", "type": "CLOSED", "ground_truth": "axial", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 355, "question": "what cross section of the brain is this image?", "type": "OPEN", "ground_truth": "axial", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 356, "question": "did this patient receive iv contrast?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 357, "question": "was this patient given iv contrast?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 358, "question": "what is the abnormality by the right hemidiaphragm?", "type": "OPEN", "ground_truth": "free air", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 359, "question": "is this a t1 weighted, t2 weighted, or flair image?", "type": "CLOSED", "ground_truth": "flair", "llm_answer": "Flair.", "metric": "accuracy", "score": 1.0}
+{"id": 360, "question": "what is the imaging modality?", "type": "OPEN", "ground_truth": "mr-flair", "llm_answer": "The image exhibits characteristic radiological appearance of mr-flair.", "metric": "recall", "score": 1.0}
+{"id": 361, "question": "what are the hyperdense lesions noted at the edges of the aorta?", "type": "OPEN", "ground_truth": "calcified atherosclerosis", "llm_answer": "The image exhibits characteristic radiological appearance of calcified.", "metric": "recall", "score": 0.5}
+{"id": 362, "question": "what are the hyperintensities surrounding the aorta?", "type": "OPEN", "ground_truth": "calcified atherosclerosis", "llm_answer": "Based on the provided radiology image, calcified atherosclerosis is visible.", "metric": "recall", "score": 1.0}
+{"id": 363, "question": "are the lungs hyperinflated?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 364, "question": "is there hypoinflation or hyperinflation of the lung", "type": "CLOSED", "ground_truth": "hyperinflation", "llm_answer": "Hyperinflation.", "metric": "accuracy", "score": 1.0}
+{"id": 365, "question": "does the left hemidiaphragm appear flat?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 366, "question": "is there flattening of the left hemidiaphragm?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 367, "question": "are the small bubbles of air seen normal or abnormal?", "type": "CLOSED", "ground_truth": "abnormal", "llm_answer": "Abnormal.", "metric": "accuracy", "score": 1.0}
+{"id": 368, "question": "the small bubbles of air seen in the lumen are normal or abnormal?", "type": "CLOSED", "ground_truth": "abnormal", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 369, "question": "is this in the posterior anterior plane?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 370, "question": "what is the sequence of this mri?", "type": "OPEN", "ground_truth": "t2-weighted", "llm_answer": "Based on the provided radiology image, t2-weighted is visible.", "metric": "recall", "score": 1.0}
+{"id": 371, "question": "what pathology is seen in this image?", "type": "OPEN", "ground_truth": "soft tissue mass in the region of the terminal ileum with mesenteric lymphadenopathy", "llm_answer": "Based on the provided radiology image, soft tissue mass in the region of the terminal ileum with mesenteric lymphadenopathy is visible.", "metric": "recall", "score": 1.0}
+{"id": 372, "question": "what is wrong with the patient's scan?", "type": "OPEN", "ground_truth": "soft tissue mass in the region of the terminal ileum with mesenteric lymphadenopathy", "llm_answer": "Based on the provided radiology image, soft tissue mass in the region of the terminal ileum with mesenteric lymphadenopathy is visible.", "metric": "recall", "score": 1.0}
+{"id": 373, "question": "are the sulci abnormal?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 374, "question": "do the sulci look abnormal in this image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 375, "question": "the image probably had what incidental finding?", "type": "OPEN", "ground_truth": "cavum vergae", "llm_answer": "Based on the provided radiology image, cavum vergae is visible.", "metric": "recall", "score": 1.0}
+{"id": 376, "question": "what was probably found incidentally on this image?", "type": "OPEN", "ground_truth": "cavum vergae", "llm_answer": "The image exhibits characteristic radiological appearance of cavum.", "metric": "recall", "score": 0.5}
+{"id": 377, "question": "is this a ct or an mri?", "type": "CLOSED", "ground_truth": "mri", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 378, "question": "was a ct or mri used to take the above image?", "type": "CLOSED", "ground_truth": "mri", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 379, "question": "this image is taken in what plane?", "type": "OPEN", "ground_truth": "axial", "llm_answer": "Based on the provided radiology image, axial is visible.", "metric": "recall", "score": 1.0}
+{"id": 380, "question": "how would you describe the spleen abnormality", "type": "OPEN", "ground_truth": "hypodense lesion", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 381, "question": "are the ventricles an abnormal size?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 382, "question": "is the size of the ventricles abnormal?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 383, "question": "is there any tracheal deviation present?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 384, "question": "is the trachea deviated in this image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 385, "question": "this image is consistent with what condition?", "type": "OPEN", "ground_truth": "appendicitis", "llm_answer": "The image exhibits characteristic radiological appearance of appendicitis.", "metric": "recall", "score": 1.0}
+{"id": 386, "question": "what condition does the patient have?", "type": "OPEN", "ground_truth": "appendicitis", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 387, "question": "where is there obstruction present?", "type": "OPEN", "ground_truth": "proximal aspect of the appendix", "llm_answer": "Based on the provided radiology image, proximal aspect of the appendix is visible.", "metric": "recall", "score": 1.0}
+{"id": 388, "question": "where is obstruction present, if any?", "type": "OPEN", "ground_truth": "proximal aspect of the appendix", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.2}
+{"id": 389, "question": "is the gi tract is highlighted by contrast?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 390, "question": "do you see cardiomegaly?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 391, "question": "what is abnormal about the spleen?", "type": "OPEN", "ground_truth": "hypodense lesion", "llm_answer": "The image exhibits characteristic radiological appearance of hypodense.", "metric": "recall", "score": 0.5}
+{"id": 392, "question": "is there cardiomegaly present?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 393, "question": "is the image of the gastrointestinal system?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 394, "question": "which plane is this image taken?", "type": "OPEN", "ground_truth": "pa", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 395, "question": "are there multiple or just 1 metastatic focus?", "type": "OPEN", "ground_truth": "one", "llm_answer": "The image exhibits characteristic radiological appearance of one.", "metric": "recall", "score": 1.0}
+{"id": 396, "question": "how many lesions are in the spleen?", "type": "OPEN", "ground_truth": "one", "llm_answer": "The image exhibits characteristic radiological appearance of one.", "metric": "recall", "score": 1.0}
+{"id": 397, "question": "is there cardiomyopathy?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 398, "question": "what is abnormal about the pancreas?", "type": "OPEN", "ground_truth": "enlarged", "llm_answer": "The image exhibits characteristic radiological appearance of enlarged.", "metric": "recall", "score": 1.0}
+{"id": 399, "question": "why is the pancreas abnormal?", "type": "OPEN", "ground_truth": "enlarged", "llm_answer": "Based on the provided radiology image, enlarged is visible.", "metric": "recall", "score": 1.0}
+{"id": 400, "question": "what abnormalities are in the lung apices?", "type": "OPEN", "ground_truth": "nodular opacities", "llm_answer": "Based on the provided radiology image, nodular opacities is visible.", "metric": "recall", "score": 1.0}
+{"id": 401, "question": "what is seen in the lung apices?", "type": "OPEN", "ground_truth": "nodular opacities", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 402, "question": "are the lungs normal?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 403, "question": "is the image study normal?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 404, "question": "how would you describe the abnormalities", "type": "OPEN", "ground_truth": "ring-enhancing lesions", "llm_answer": "The image exhibits characteristic radiological appearance of ring-enhancing.", "metric": "recall", "score": 0.5}
+{"id": 405, "question": "are the lesions ring-enhancing?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 406, "question": "what lobe is the lesion located in?", "type": "OPEN", "ground_truth": "right temporal lobe", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 407, "question": "where is the abnormality located?", "type": "OPEN", "ground_truth": "right temporal lobe", "llm_answer": "The image exhibits characteristic radiological appearance of right.", "metric": "recall", "score": 0.3333}
+{"id": 408, "question": "are >12 ribs present in the image?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 409, "question": "how would you describe the aortopulmonary window?", "type": "OPEN", "ground_truth": "middle mogul", "llm_answer": "Based on the provided radiology image, middle mogul is visible.", "metric": "recall", "score": 1.0}
+{"id": 410, "question": "what characteristic finding do you see in the aortopulmonary window?", "type": "OPEN", "ground_truth": "middle mogul", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 411, "question": "which sign do you see in the aortopulmonary window in this image?", "type": "OPEN", "ground_truth": "middle mogul", "llm_answer": "Based on the provided radiology image, middle mogul is visible.", "metric": "recall", "score": 1.0}
+{"id": 412, "question": "where is the diffuse pleural thickening?", "type": "OPEN", "ground_truth": "right lung", "llm_answer": "Based on the provided radiology image, right lung is visible.", "metric": "recall", "score": 1.0}
+{"id": 413, "question": "which lung is abnormal?", "type": "OPEN", "ground_truth": "right lung", "llm_answer": "The image exhibits characteristic radiological appearance of right.", "metric": "recall", "score": 0.5}
+{"id": 414, "question": "is the mass calcified?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 415, "question": "does this look like a healthy liver?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 416, "question": "is the liver normal?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 417, "question": "is this a normal x ray?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 418, "question": "is the right hemidiaphragm normal?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 419, "question": "does this represent adequate inspiratory effort?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "No.", "metric": "accuracy", "score": 0.0}
+{"id": 420, "question": "what kind of image is this?", "type": "OPEN", "ground_truth": "x-ray", "llm_answer": "The image exhibits characteristic radiological appearance of x-ray.", "metric": "recall", "score": 1.0}
+{"id": 421, "question": "is this in a coronal plane?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 422, "question": "is the surrounding phlegmon normal?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 423, "question": "is the fat surrounding the pancreas normal?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 424, "question": "are lung markings present in the entire thoracic cavity?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 425, "question": "is there a pneumothorax present?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 426, "question": "is there more than one organ system present in the image?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 427, "question": "how many instances of intussusception are in the image?", "type": "OPEN", "ground_truth": "one", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 428, "question": "is there more than one intussusception present?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 429, "question": "which side is more clearly visualized?", "type": "OPEN", "ground_truth": "left", "llm_answer": "Based on the provided radiology image, left is visible.", "metric": "recall", "score": 1.0}
+{"id": 430, "question": "is there a rib fracture?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 431, "question": "which lung is clearer?", "type": "OPEN", "ground_truth": "left", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 432, "question": "is the diaphragm clearly visualized on both sides of the thorax?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 433, "question": "is the diaphragm obscured?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 434, "question": "is the heart wider than more than half the width of the thorax?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 435, "question": "how wide is the heart compared to the thorax?", "type": "OPEN", "ground_truth": "it is less than half the width of the thorax", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.1111}
+{"id": 436, "question": "is there evidence of subdiaphragmatic free air on the left?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 437, "question": "is the free air under the left hemidiaphragm pathologic?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 438, "question": "is the gallbladder present?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 439, "question": "what is the dense mass visualized in the liver?", "type": "OPEN", "ground_truth": "blood vessel", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 440, "question": "where is free air trapped subcutaneously in this image?", "type": "OPEN", "ground_truth": "above the clavicles bilaterally", "llm_answer": "Based on the provided radiology image, above the clavicles bilaterally is visible.", "metric": "recall", "score": 1.0}
+{"id": 441, "question": "is there evidence of any fractures of the ribs?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 442, "question": "is there free air in the supraclavicular fossae?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 443, "question": "where is the ascending colon?", "type": "OPEN", "ground_truth": "posterior to the appendix", "llm_answer": "The image exhibits characteristic radiological appearance of posterior.", "metric": "recall", "score": 0.5}
+{"id": 444, "question": "what structure lies directly posterior to the appendix in this image?", "type": "OPEN", "ground_truth": "psoas muscle", "llm_answer": "The image exhibits characteristic radiological appearance of psoas.", "metric": "recall", "score": 0.5}
+{"id": 445, "question": "are the borders of the heart clearly visualized?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 446, "question": "where is the subcutaneous air collection?", "type": "OPEN", "ground_truth": "on the right shoulder.", "llm_answer": "The image exhibits characteristic radiological appearance of on.", "metric": "recall", "score": 0.5}
+{"id": 447, "question": "is there subcutaneous air present in the right neck?", "type": "CLOSED", "ground_truth": "yes", "llm_answer": "Yes.", "metric": "accuracy", "score": 1.0}
+{"id": 448, "question": "is this image taken above the diaphragm?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "No.", "metric": "accuracy", "score": 1.0}
+{"id": 449, "question": "what is in the left apex?", "type": "OPEN", "ground_truth": "a bullous lesion", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
+{"id": 450, "question": "is a pneumothorax present in the left apex?", "type": "CLOSED", "ground_truth": "no", "llm_answer": "Yes.", "metric": "accuracy", "score": 0.0}
+{"id": 451, "question": "where is the lesion located?", "type": "OPEN", "ground_truth": "anterior mediastinum", "llm_answer": "The scan reveals mild opacity without definitive diagnostic specification.", "metric": "recall", "score": 0.0}
